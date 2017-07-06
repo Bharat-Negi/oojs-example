@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Create Objects Using the New Keyword</title>
+</head>
+	
+<script>
+	function Person(firstName, lastName) {
+	    // construct the object using the arguments
+	    this.firstName = firstName;
+	    this.lastName = lastName;
+
+	    // a method which returns the full name
+	    this.fullName = function() {
+	        return this.firstName + " " + this.lastName;
+	    }
+	}
+
+	// add person data
+	var myPerson = new Person("John", "Smith");
+	var myPerson2 = new Person("Bharat", "Negi");
+
+	// view in web browser console log
+	console.log(myPerson.fullName()); // outputs "John Smith"
+	console.log(myPerson2.fullName());
+
+	// view in web browser
+	document.write(myPerson.fullName() + "<br/>");
+	document.write(myPerson2.fullName());
+</script>
+
+<body>
+	
+</body>
+</html>
