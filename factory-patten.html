@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Factory Pattern</title>
+</head>
+<script>
+	var peopleFactory = function(name, age, state){
+		var temp = {}; // this is object
+
+		temp.name = name;
+		temp.age = age;
+		temp.state = state;
+
+		temp.printPerson = function(){
+			console.log(this.name + ", " + this.age + ", " + this.state);
+		};
+
+		return temp;
+	};
+
+	var person1 = peopleFactory('Bharat', 32, 'Delhi');
+	var person2 = peopleFactory('Rahul', 30, 'New Delhi');
+
+	person1.printPerson();
+	person2.printPerson();
+</script>
+
+<body>
+	
+</body>
+</html>

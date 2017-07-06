@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Constructor Pattern</title>
+</head>
+<script>
+	var peopleConstructor = function(name, age, state){
+		// go all in each object
+		this.name = name;
+		this.age = age;
+		this.state = state;
+
+		this.printPerson = function(){
+			console.log(this.name + ", " + this.age + ", " + this.state);
+		};
+
+	};
+
+	var person1 = new peopleConstructor('Bharat', 32, 'Delhi');
+	var person2 = new peopleConstructor('Rahul2', 30, 'New Delhi');
+
+	person1.printPerson();
+	person2.printPerson();
+</script>
+
+<body>
+	
+</body>
+</html>
