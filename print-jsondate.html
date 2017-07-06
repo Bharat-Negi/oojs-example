@@ -1,60 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-	<meta charset="UTF-8">
-	<title>Student Data flow JS</title>
-	<script type="text/javascript">
-		// function Student(first, last, id, english, maths, science){
-		// 	this.fName = first;
-		// 	this.lName = last;
-		// 	this.id = id;
-		// 	this.markE = english;
-		// 	this.markM = maths;
-		// 	this.markS = science;
-		// 	this.calculateAverage = function()
-		// {
-		// 	return (this.markE + this.markM + this.markS)/3;
-		// }
-		// 	this.displayDetails = function(){
-		// 		document.write("Student Id: " + this.id + "<br />");
-		// 		document.write("Name: " + this.fName + " " + this.lName + "<br />");
-		// 		var avg = this.calculateAverage();
-		// 		document.write("Average Marks: " + avg + "<br /><br />");
-		// 	}
-		// };
-
-		// // Data add in
-		// var st1 = new Student("John", "Smith", 15, 85, 79, 90);
-		// var st2 = new Student("Hannah", "Turner", 23, 75, 80, 82);
-		// var st3 = new Student("Kevin", "White", 4, 93, 89, 90);
-		// var st4 = new Student("Rose", "Taylor", 11, 55, 63, 45);
-
-		// // Data display on page
-		// st1.displayDetails();
-		// st2.displayDetails();
-		// st3.displayDetails();
-		// st4.displayDetails();
-
-		var data;
-	    $.ajax({
-		    dataType: "json",
-		    url: `data.json`, // file://${__dirname}/data.json
-		    data: data,
-		    success: function(data) {
-		         data = data;
-		      }
-	    });
-	    $(window).load(function(){
-		    $(data).each(function() {
-		        var output = "<a href='" + this.url + "'><div class='col-sm-12'><div class='panel panel-default'><div class='panel-body'><h4>" + this.title + "</h4><p>" + this.content + "</p></div></div></div></a>";
-		        $('#feed').append(output);
-		    });
-	    });
-
-	</script>
-
+<script>
+function ajax_get_json(){
+	var results = document.getElementById("results");
+    var hr = new XMLHttpRequest();
+    hr.open("GET", "mylist.json", true);
+    hr.setRequestHeader("Content-type", "application/json", true);
+    hr.onreadystatechange = function() {
+	    if(hr.readyState == 4 && hr.status == 200) {
+		    var data = JSON.parse(hr.responseText);
+			results.innerHTML = "";
+			for(var obj in data){
+				results.innerHTML += data[obj].user+" is "+data[obj].age+" and lives in "+data[obj].country+"<hr />";
+			}
+	    }
+    }
+    hr.send(null);
+    results.innerHTML = "requesting...";
+}
+</script>
 </head>
 <body>
-	
+<div id="results"></div>
+<script>ajax_get_json();</script>
 </body>
 </html>
