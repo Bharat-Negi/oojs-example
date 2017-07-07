@@ -8,9 +8,9 @@ ourList.addEventListener("click", activateItem);
 
 function activateItem(e) {
 	if (e.target.nodeName == "LI") {
-		outHeadline.innerHTML = e.target.innerHTML;
-		for (i = 0; i < e.target.parentNode.children.length; i++{
-			e.target.parentNode.children.length[i].classList.remove("active");
+		ourHeadline.innerHTML = e.target.innerHTML;
+		for (i = 0; i < e.target.parentNode.children.length; i++) {
+			listItems[i].classList.remove("active");
 		}
 		e.target.classList.add("active");
 	}
@@ -19,5 +19,6 @@ function activateItem(e) {
 ourButton.addEventListener("click", createNewItem);
 
 function createNewItem() {
-	ourList.innerHTML += "dfafaf";
+	ourList.innerHTML += "<li> New text name " + newItemCounter + "</li>";
+	newItemCounter++
 }

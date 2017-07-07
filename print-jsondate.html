@@ -12,7 +12,7 @@ function ajax_get_json(){
 		    var data = JSON.parse(hr.responseText);
 			results.innerHTML = "";
 			for(var obj in data){
-				results.innerHTML += data[obj].user+" is "+data[obj].age+" and lives in "+data[obj].country+"<hr />";
+				results.innerHTML += data[obj].user +" is "+ data[obj].age +" and lives in " + data[obj].country + "<hr />";
 			}
 	    }
     }
