@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>object method</title>
+</head>
+<body>
+	
+	<script>
+		var myHouse = new Object();
+			myHouse.length = 65;
+			myHouse.width = 40;
+			myHouse.area = function(){ // my function define in object it is called method
+				return this.length * this.width // return is required for display on html page
+			}
+
+		var urHouse = {
+			length : 100,
+			width : 56,
+			area : function(){
+				return this.length * this.width
+			}
+		};
+
+		// call on page
+		document.write(myHouse.area(), '<br/>');
+		document.write(urHouse.area(), '<br/>');
+
+		document.write('-----------------------------------------------------', '<br/>');
+
+		// short code
+		var Perimeter = function(){ 
+			return 2*(this.length * this.width) 
+		}
+
+		var myHous = new Object();
+			myHous.length = 10;
+			myHous.width = 45;
+			myHous.area = Perimeter;
+
+		var urHous = {
+			length : 40,
+			width : 20,
+			area : Perimeter
+		};
+
+		// call on page
+		document.write(myHous.area(), '<br/>');
+		document.write(urHous.area());
+
+	</script>
+</body>
+</html>
