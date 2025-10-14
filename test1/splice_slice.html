@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Splice and Slice</title>
+  </head>
+  <body>
+    <h1>Please Check Browser Console</h1>
+
+    <script>
+      let num = [58, 12, 3, 24, 5, 56, 7, 18, 49];
+
+      num.splice(2, 3, 1023, 1056, 1034); //
+      console.log(num);
+
+      let numNew = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+      let numSlice = numNew.slice(3); // add new array
+      console.log(numSlice);
+
+      let numSlice2 = numNew.slice(3, 5); // add new array
+      console.log(numSlice2);
+    </script>
+  </body>
+</html>

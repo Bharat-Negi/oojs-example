@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sort Method</title>
+</head>
+<body>
+    
+    <h1>Please Check Browser Console</h1>
+    
+    <script>
+        let num = [58,12,3,24,5,56,7,18,49]
+
+        num.sort(); // short by first value like:- 1,2,3 etc.
+        console.log(num) // also change original array
+
+        // ascending order
+        let compare = (a, b) => {
+            return a - b
+        }
+        num.sort(compare);
+        console.log(num)
+
+        // descending order
+        let compareNew = (a, b) => {
+            return b - a
+        }
+        num.sort(compareNew);
+        console.log(num)
+    </script>
+</body>
+</html>
