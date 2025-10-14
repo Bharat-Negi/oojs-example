@@ -19,10 +19,6 @@ function activateItem(e) {
 ourButton.addEventListener("click", createNewItem);
 
 function createNewItem() {
-<<<<<<< HEAD:JS program 1/main.js
-	ourList.innerHTML += "<li> New Tab " + newItemCounter + "</li>";
-=======
 	ourList.innerHTML += "<li>New text name " + newItemCounter + "</li>";
->>>>>>> e910c1970317d6e1dec32e749480a0807f51a47f:main.js
 	newItemCounter++
 }

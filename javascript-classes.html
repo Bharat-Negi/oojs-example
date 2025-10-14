@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>How to use classes</title>
+</head>
+<body>
+    
+   <script>
+		// define classes
+		var house = function(length, width){
+			this.length = length;
+			this.width = width;
+			this.area = function(){
+				return this.length * this.width;
+			};
+			this.perimeter = function(){
+				return 2*(this.length + this.width);
+			};
+			this.info = function(){
+				return "Length = "+this.length+"<br/> Width = "+this.width+"<br/> Area = "+this.area()+"<br/> Perimeter = "+this.perimeter();
+			};
+		};
+
+		// pass value by user
+		var myHouse = new house(45,63);
+		var urHouse = new house(50,60);
+		var johnHouse = new house(10,200);
+
+		// display on html page
+		document.write(myHouse.info());
+		document.write('<br/> ------------------------------------------');
+
+		// method define for person
+		var person = function(fullname, age, country, profession){
+			this.fullname = fullname;
+			this.age = age;
+			this.country = country;
+			this.profession = profession;
+			this.birthyear = function(){
+				var currentyear = new Date().getFullYear();
+				return currentyear-this.age;
+			};
+		};
+
+		// 
+		var bharat = new person('bharat Negi', 34, 'India', 'Ui Developer');
+		document.write('<br/> My Age is = ', bharat.birthyear());
+
+		document.write('<br/> ------------------------------------------<br/>');
+
+		// get value for two different object
+		var personOne = function(fullname, age, country){
+			this.fullname = fullname;
+			this.age = age;
+			this.country = country;
+		};
+
+		var vinay = new personOne('Vinay Kumar', 27, 'India');
+		var john = new personOne('John Deo', 34, 'United State');
+		var eric = new personOne('Eric Methew', 32, 'Uniter Kingdom');
+
+		function ageDifference(person1, person2){
+			var diff = Math.abs(person1.age - person2.age);
+			document.write('Age Difference between '+person1.fullname+' and '+person2.fullname+' is '+diff+' years');
+		}
+
+		ageDifference(vinay,eric);
+		document.write('<br/> ------------------------------------------<br/>');
+
+		// check the property single
+		document.write(vinay.hasOwnProperty('age'));
+		document.write('<br/> ------------------------------------------<br/>');
+
+		// check the property loop
+		for(var prop in vinay ){
+			document.write(prop+' : '+vinay[prop]+'<br/>');
+		}
+		document.write('------------------------------------------<br/>');
+
+		// add prototype function
+		personOne.prototype.birthdate = function(){
+			var curyear = new Date().getFullYear();
+			return curyear - this.age;
+		};
+		document.write(vinay.birthdate());
+		document.write('<br/>------------------------------------------<br/>');
+
+		// make private in object
+		var personTwo = function(name, age, profession, bankBalance){
+			this.name = name;
+			this.age = age;
+			this.profession = profession;
+			var bankBalance = bankBalance; // this is define as a private property
+			// access private property on public
+			this.savings = function(pswd){
+				if(pswd == 'hello'){
+					return 'Bank balance of '+this.name+' is '+bankBalance;
+				} else {
+					return 'You can not access the Bank balance of '+this.name;
+				}
+			};
+		};
+		
+		var kumar = new personTwo('John Kumar', 30, 'Manager', '2.5 Million Doller');
+		
+		for(var propb in kumar ){
+			document.write(propb+' : '+kumar[propb]+'<br/>');
+		}
+		document.write('------------------------------------------<br/>');
+		// call on page
+		document.write(kumar.savings());
+
+
+   </script>
+</body>
+</html>

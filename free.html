@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Free Javascript</title>
+</head>
+<body>
+	<div id="check">Hello</div>
+
+	<div data-id="1">This is Tab 1</div>
+
+	<script>
+		document.getElementById("check").onclick = function() {first()};
+
+		function first(){
+			var hfinal = document.body.getAttribute("data-id");
+
+			alert(hfinal);
+		}
+	</script>
+</body>
+</html>
