@@ -19,8 +19,8 @@
 
       // ForEach Loop
       console.log('ForEach Loop')
-      num.forEach((element) => {
-        console.log(element * element);
+      num.forEach((element, index) => {
+        console.log(element + index);
       })
 
       //Array. from
@@ -35,10 +35,16 @@
         console.log("Value:" + item);
       }
 
+      // for....of find Key
+      console.log('for....of find Key')
+      for(let [index, value] of num.entries()){
+        console.log("Key: " + index + ", Value: " + value);
+      }
+
       // for....in
       console.log('for....in')
       for(let i in num){
-        console.log("Key:" + i + " Value:" + num[i]);
+        console.log("Key: " + i + ", Value: " + num[i]);
       }
     </script>
   </body>
