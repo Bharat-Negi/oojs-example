@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loops With Arrays</title>
+  </head>
+  <body>
+    <h1>Please Check Browser Console</h1>
+
+    <script>
+      let num = [3, 5, 1, 2, 4];
+
+      //old array formate
+      console.log('For Loop Old Type')
+      for( let i = 0; i<num.length; i++){
+        console.log(num[i]);
+      }
+
+      // ForEach Loop
+      console.log('ForEach Loop')
+      num.forEach((element) => {
+        console.log(element * element);
+      })
+
+      //Array. from
+      console.log('Array.from')
+      let name = "Bharat"
+      let arr = Array.from(name);
+      console.log(arr)
+
+      // for....of
+      console.log('for....of')
+      for(let item of num){
+        console.log("Value:" + item);
+      }
+
+      // for....in
+      console.log('for....in')
+      for(let i in num){
+        console.log("Key:" + i + " Value:" + num[i]);
+      }
+    </script>
+  </body>
+</html>
