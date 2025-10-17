@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Map Filter Reduce</title>
+  </head>
+  <body>
+    <h1>Please Check Browser Console</h1>
+
+    <script>
+      let arr = [45, 23, 48, 60, 50];
+
+      // array map method
+      let a = arr.map((value, index, arr) => {
+        console.log("Value: " + value + ", Index: " + index + ", Array: " + arr);
+        return value + 2
+      })
+      console.log(a) // get value form a return function
+      
+      // array filter method
+      let arr2 = [54, 64, 74, 10, 20, 30];
+      let a2 = arr2.filter((a) => {
+        return a < 35;
+      })
+      console.log(a2);
+
+      // array reduce method
+      let arr3 = [1, 2, 3, 4, 2, 3];
+      let newArr3 = arr3.reduce((h1, h2)=>{
+        return h1 + h2
+      })
+      console.log(newArr3);
+
+    </script>
+  </body>
+</html>
