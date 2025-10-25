@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shift and Unshift</title>
+</head>
+<body>
+    <h1>Please Check Browser Console</h1>
+
+    <script>
+        // shift() - Remove from beginning
+        const fruits = ['apple', 'banana', 'orange'];
+        const removedFruit = fruits.shift();
+
+        console.log(removedFruit); // 'apple'
+        console.log(fruits);       // ['banana', 'orange']
+
+        // unshift() - Add to beginning
+        const fruits1 = ['banana', 'orange'];
+        const newLength = fruits.unshift('apple');
+
+        console.log(newLength); // 3
+        console.log(fruits);    // ['apple', 'banana', 'orange']
+    </script>
+</body>
+</html>

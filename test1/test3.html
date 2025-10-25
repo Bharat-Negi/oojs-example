@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test 3</title>
+</head>
+<body>
+    <h1>Please Check Browser Console</h1>
+
+    <script>
+        console.log('A'+1); // Output: A1
+        console.log("Bharat"+"100") // Output: Bharat100
+        
+        console.log('2'+ 2 +'2') // Output: 222
+        /*
+        Step 1: '2' + 2
+        The + operator performs string concatenation when at least one operand is a string.
+        '2' + 2 becomes '2' + '2' → '22' (string).
+
+        Step 2: '22' + '2'
+        Now we have '22' + '2', which is string concatenation.
+        '22' + '2' → '222' (string).
+        */
+
+        console.log('2'+ 2 -'2') // Output: 20
+        /* 
+        Step 1: '2' + 2
+        In JavaScript, the + operator is used for both addition and string concatenation.
+        If at least one operand is a string, it performs string concatenation.
+        So '2' + 2 becomes '2' + '2' → '22' (a string). 
+        
+        Step 2: '22' - '2'
+        The - operator is only for numeric subtraction. JavaScript will try to convert both operands to numbers.
+        '22' → 22 (number)
+        '2' → 2 (number)
+        So 22 - 2 = 20 (number).
+        */
+
+        /*------------------------------------*/
+        const a = {}
+        const b ={name: 'Bharat'}
+        const c ={name: 'Pinky'}
+        a[b] = {
+            name: 'Ram'
+        }
+        a[c] = {
+            name: 'Shiva'
+        }
+        console.log(a[b]); // a["[object Object]"] Output: Shiva 
+
+        /*------------------------------------*/
+        const y = 0;
+        const z = false
+        console.log(y==z) // (Loose equality) Output: true
+        console.log(y===z) // (Strict equality) Output: false (check both value and typeof)
+
+        console.log(NaN == NaN);   // Loose equality Output: false
+        // Even though it's loose equality, NaN is never equal to anything, including itself
+
+        console.log(NaN === NaN);  // Strict equality Output: false
+        // Same type, same value (technically), but the specification explicitly says NaN !== NaN
+        // This is a fundamental rule in JavaScript
+
+        /*------------------------------------*/
+
+        const arr1 = [1,2,3,4]
+        const result = arr1.map((e) => {
+            return e > 2;
+        })
+        // The map() method creates a new array by calling a function on every element of the original array
+        // It returns the result of the callback function for each element
+        console.log(result); // [false, false, true, true]
+        // This returns a boolean (true or false) for each comparison
+        // map() → transforms each element (returns boolean in this case)
+
+        const filteredResult = arr1.filter(e => e > 2);
+        console.log(filteredResult); // [3, 4]
+        // filter() → returns only elements that pass the condition
+
+    </script>
+</body>
+</html>
