@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Separate Number, String and Character</title>
+  </head>
+  <body>
+    <h1>Please Check Browser Console</h1>
+
+    <script>
+      const arr = [100, "q", "Bharat", "Singh", 10, 8, "C"];
+
+      const numbers = arr.filter((item) => typeof item === "number");
+      const strings = arr.filter(
+        (item) => typeof item === "string" && item.length > 1
+      );
+      const characters = arr.filter(
+        (item) => typeof item === "string" && item.length === 1
+      );
+
+      console.log("Numbers:", numbers);
+      console.log("Strings:", strings);
+      console.log("Characters:", characters);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Two</title>
+</head>
+<body>
+    
+    <script>
+        var a = [10,11,12,13,14];
+        function print(b,...a){
+            console.log(a)
+        }
+        print(8,9,10,11,12,13);
+
+        // assign new value in map
+        const arr = [1,2,3,4]
+        const arr1 = arr.map((ele, idx, arr)=> {
+            return arr = 8;
+        })
+        console.log(arr1);
+
+        // make array in group
+        const obj = {
+            a:1,
+            b:2,
+            c:3,
+            d:4
+        };
+        const objNew = Object.entries(obj);
+        console.log(objNew);
+
+        //one function for both sum
+        function sum(a,b){
+            if (a && b) return a + b;
+            return function(b){
+                return a + b;
+            }
+        }
+
+        console.log(sum(8,9));
+        console.log(sum(8)(9));
+
+        //what is the value
+        console.log([]===[]); // This condition will always return 'false' since JavaScript compares objects by reference, not value.
+        console.log([]==[]); // This condition will always return 'false' since JavaScript compares objects by reference, not value.
+    </script>
+</body>
+</html>
