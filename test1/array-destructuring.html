@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Destructuring</title>
+  </head>
+  <body>
+    <h1>Please Check Browser Console</h1>
+
+    <script>
+      // Basic Extraction
+      const fruits = ["apple", "banana", "orange"];
+
+      // Traditional way
+      const fruit1 = fruits[0];
+      const fruit2 = fruits[1];
+      const fruit3 = fruits[2];
+
+      // With destructuring
+      const [first, second, third] = fruits;
+
+      console.log(first); // 'apple'
+      console.log(second); // 'banana'
+      console.log(third); // 'orange'
+
+      /* --------------------------------------------------- */
+      // Skipping Elements
+      const numbers = [1, 2, 3, 4, 5];
+
+      // Skip elements using empty commas
+      const [a, , c, , e] = numbers;
+
+      console.log(a); // 1
+      console.log(c); // 3
+      console.log(e); // 5
+
+      /* --------------------------------------------------- */
+      // Advanced Destructuring Patterns
+      // Rest Pattern (...)
+      const colors = ["red", "green", "blue", "yellow", "purple"];
+
+      // Get first two, rest in another array
+      const [primary, secondary, ...others] = colors;
+
+      console.log(primary); // 'red'
+      console.log(secondary); // 'green'
+      console.log(others); // ['blue', 'yellow', 'purple']
+
+      /* --------------------------------------------------- */
+      // Default Values
+      // Default values for potentially missing elements
+      const [ab = 1, bb = 2, cb = 3] = [10];
+
+      console.log(ab); // 10
+      console.log(bb); // 2 (default)
+      console.log(cb); // 3 (default)
+
+      // Real-world example
+      function getCoordinates() {
+        return [10, 20];
+      }
+
+      const [x = 0, y = 0, z = 0] = getCoordinates();
+      console.log(x, y, z); // 10, 20, 0
+
+      /* --------------------------------------------------- */
+      // Swapping Variables
+      let aa = 10;
+      let ba = 20;
+
+      // Traditional way (needs temp variable)
+      let temp = aa;
+      aa = ba;
+      ba = temp;
+
+      // With destructuring
+      [aa, ba] = [ba, aa];
+
+      console.log(aa); // 20
+      console.log(ba); // 10
+
+      /* --------------------------------------------------- */
+      // Practical Use Cases
+      // Function Return Values
+      // Function returning multiple values as array
+      function getStudentInfo() {
+        return ["John", 25, "Computer Science"];
+      }
+
+      // Destructure the result
+      const [name, age, major] = getStudentInfo();
+
+      console.log(name); // 'John'
+      console.log(age); // 25
+      console.log(major); // 'Computer Science'
+
+      /* --------------------------------------------------- */
+      // Working with Strings
+      const dateString = "2024-03-15";
+
+      // Split and destructure
+      const [year, month, day] = dateString.split("-");
+
+      console.log(year); // '2024'
+      console.log(month); // '03'
+      console.log(day); // '15'
+
+      /* --------------------------------------------------- */
+      // Nested Array Destructuring
+      const nestedArray = [1, [2, 3], [4, [5, 6]]];
+
+      const [first1, [second1, third1], [fourth, [fifth, sixth]]] = nestedArray;
+
+      console.log(first1); // 1
+      console.log(second1); // 2
+      console.log(third1); // 3
+      console.log(fourth); // 4
+      console.log(fifth); // 5
+      console.log(sixth); // 6
+
+      /* --------------------------------------------------- */
+      // Real-World Examples
+      // API Response Handling
+      // Simulating API response
+      function fetchUserData() {
+        return ["john_doe", "john@example.com", 30, "New York"];
+      }
+
+      const [username, email, age1, city] = fetchUserData();
+
+      console.log(
+        `User: ${username}, Email: ${email}, Age: ${age1}, City: ${city}`
+      );
+
+      /* --------------------------------------------------- */
+      // RGB Color Values
+      function getRGB(colorString) {
+        return colorString.match(/\d+/g).map(Number);
+      }
+
+      const [red, green, blue] = getRGB("rgb(255, 128, 64)");
+
+      console.log(red); // 255
+      console.log(green); // 128
+      console.log(blue); // 6
+
+      /* --------------------------------------------------- */
+      // Multiple Return Values from Math Operations
+      function minMax(numbers) {
+        return [Math.min(...numbers), Math.max(...numbers)];
+      }
+
+      const [min, max] = minMax([5, 2, 8, 1, 9, 3]);
+
+      console.log(`Min: ${min}, Max: ${max}`); // Min: 1, Max: 9
+
+      /* --------------------------------------------------- */
+      // React useState Hook (Conceptual)
+      // This is how React useState works internally
+      function useState(initialValue) {
+        let value = initialValue;
+        const setValue = (newValue) => {
+          value = newValue;
+        };
+        return [value, setValue];
+      }
+
+      // Usage with destructuring
+      const [count, setCount] = useState(0);
+      console.log(count); // 0
+
+      /* --------------------------------------------------- */
+      // Common Patterns and Tips
+      // Partial Destructuring
+      const data = ["header", "content", "footer", "sidebar"];
+
+      // Only get what you need
+      const [header, , footer] = data;
+      console.log(header, footer); // 'header' 'footer'
+
+      // Get last element
+      const [, , , last] = data;
+      console.log(last); // 'sidebar'
+
+      /* --------------------------------------------------- */
+      // With Rest Operator for Remaining
+      const [first2, second2, ...remaining] = [1, 2, 3, 4, 5, 6];
+
+      console.log(first2); // 1
+      console.log(second2); // 2
+      console.log(remaining); // [3, 4, 5, 6]
+
+      /* --------------------------------------------------- */
+      // Combining with Object Destructuring
+      const response = {
+        data: ["John", "Doe", 30],
+        status: "success",
+      };
+
+      const {
+        data: [firstName, lastName, age2],
+        status,
+      } = response;
+
+      console.log(firstName, lastName, age2, status); // John Doe 30 success
+
+      /* --------------------------------------------------- */
+    </script>
+  </body>
+</html>
