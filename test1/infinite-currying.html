@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Infinite Currying</title>
+  </head>
+  <body>
+    <h1>Please Check Browser Console</h1>
+
+    <script>
+      // Basic Infinite Currying Example
+      // Infinite currying function
+      function add(a) {
+        return function (b) {
+          if (b !== undefined) {
+            return add(a + b);
+          }
+          return a;
+        };
+      }
+
+      // Usage
+      console.log(add(1)(2)(3)()); // 6
+      console.log(add(5)(10)(15)(20)()); // 50
+      console.log(add(1)()); // 1
+
+      /* --------------------------------------------------- */
+      // Infinite Currying with Value Method
+      function multiply(a) {
+        const multiplyFn = function (b) {
+          return multiply(a * b);
+        };
+
+        multiplyFn.value = function () {
+          return a;
+        };
+
+        multiplyFn.valueOf = function () {
+          return a;
+        };
+
+        return multiplyFn;
+      }
+
+      // Usage
+      console.log(multiply(2)(3)(4).value()); // 24
+      console.log(multiply(1)(2)(3)(4).value()); // 24
+
+      // With valueOf (automatic conversion)
+      console.log(multiply(2)(3)(4) + 1); // 25
+
+      /* --------------------------------------------------- */
+      // Generic Infinite Curry Utility
+      function infiniteCurry(fn) {
+        return function curried(...args) {
+          if (args.length === 0) {
+            return undefined;
+          }
+
+          return function next(...nextArgs) {
+            if (nextArgs.length === 0) {
+              return args.reduce(fn);
+            }
+            return curried(...args, ...nextArgs);
+          };
+        };
+      }
+
+      // Usage with different operations
+      const infiniteAdd = infiniteCurry((a, b) => a + b);
+      const infiniteMultiply = infiniteCurry((a, b) => a * b);
+
+      console.log(infiniteAdd(1)(2)(3)()); // 6
+      console.log(infiniteAdd(1)(2)(3)(4)()); // 10
+      console.log(infiniteMultiply(2)(3)(4)()); // 24
+
+      /* --------------------------------------------------- */
+      // Infinite Currying with Custom Terminator
+      function createInfiniteCurry(operation) {
+        return function curried(...args) {
+          const currentResult = args.reduce(operation);
+
+          const chain = function (...nextArgs) {
+            if (nextArgs.length === 0) {
+              return currentResult;
+            }
+            return curried(currentResult, ...nextArgs);
+          };
+
+          chain.value = () => currentResult;
+          chain.done = () => currentResult;
+
+          return chain;
+        };
+      }
+
+      // Usage
+      const addChain = createInfiniteCurry((a, b) => a + b);
+      const multiplyChain = createInfiniteCurry((a, b) => a * b);
+
+      console.log(addChain(1)(2)(3)(4).done()); // 10
+      console.log(multiplyChain(2)(3)(4).value()); // 24
+
+      /* --------------------------------------------------- */
+      // Query Builder
+      function createQuery() {
+        let query = "";
+
+        const builder = function (part) {
+          if (part === undefined) {
+            return query.trim();
+          }
+          query += part + " ";
+          return builder;
+        };
+
+        return builder;
+      }
+
+      const query = createQuery();
+      const finalQuery =
+        query("SELECT")("*")("FROM")("users")("WHERE")("age > 18")();
+
+      console.log(finalQuery); // "SELECT * FROM users WHERE age > 18"
+
+      /* --------------------------------------------------- */
+      // Configuration Builder
+      function createConfig() {
+        const config = {};
+
+        const builder = function (key, value) {
+          if (key === undefined) {
+            return config;
+          }
+
+          if (typeof key === "object") {
+            Object.assign(config, key);
+          } else {
+            config[key] = value;
+          }
+
+          return builder;
+        };
+
+        return builder;
+      }
+
+      const config = createConfig();
+      const finalConfig = config("name", "MyApp")("version", "1.0.0")({
+        debug: true,
+        port: 3000,
+      })();
+
+      console.log(finalConfig);
+      // { name: 'MyApp', version: '1.0.0', debug: true, port: 3000 }
+
+      /* --------------------------------------------------- */
+      // DOM Chainable API
+      function createElement(tagName) {
+        const element = document.createElement(tagName);
+
+        const chain = function (property, value) {
+          if (property === undefined) {
+            return element;
+          }
+
+          if (typeof property === "function") {
+            property(element);
+          } else if (typeof value !== "undefined") {
+            element[property] = value;
+          } else if (typeof property === "object") {
+            Object.assign(element, property);
+          }
+
+          return chain;
+        };
+
+        return chain;
+      }
+
+      // Usage
+      const myElement = createElement("div")("className", "my-class")(
+        "textContent",
+        "Hello World"
+      )("style", { color: "red", fontSize: "16px" })((el) =>
+        el.setAttribute("data-custom", "value")
+      )();
+
+      console.log(myElement); // Returns the DOM element
+
+      /* --------------------------------------------------- */
+      // Advanced: Symbol-based Termination
+      const DONE = Symbol("done");
+
+      function infiniteCurryWithSymbol(fn) {
+        return function curried(...args) {
+          return function (...nextArgs) {
+            if (nextArgs.length === 1 && nextArgs[0] === DONE) {
+              return args.reduce(fn);
+            }
+            return curried(...args, ...nextArgs);
+          };
+        };
+      }
+
+      // Usage
+      const add = infiniteCurryWithSymbol((a, b) => a + b);
+      const multiply = infiniteCurryWithSymbol((a, b) => a * b);
+
+      console.log(add(1)(2)(3)(DONE)); // 6
+      console.log(multiply(2)(3)(4)(DONE)); // 24
+
+      /* --------------------------------------------------- */
+      
+
+    </script>
+  </body>
+</html>

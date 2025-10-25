@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Function Currying</title>
+  </head>
+  <body>
+    <h1>Please Check Browser Console</h1>
+    <p id="myDiv">Function currying in JavaScript is a technique that transforms a function with multiple arguments into a sequence of nested functions, each taking a single argument</p>
+
+    <script>
+      // Function currying in JavaScript is a technique that transforms a function with multiple arguments into a sequence of nested functions, each taking a single argument
+
+      // Basic Currying Example
+      // Regular function
+      function add(a, b, c) {
+        return a + b + c;
+      }
+      console.log(add(1, 2, 3)); // 6
+
+      // Curried version
+      function curriedAdd(a) {
+        return function (b) {
+          return function (c) {
+            return a + b + c;
+          };
+        };
+      }
+      console.log(curriedAdd(1)(2)(3)); // 6
+
+      /* ---------------------------------------- */
+      // Curried function for greetings
+      function greet(greeting) {
+        return function (name) {
+          return `${greeting}, ${name}!`;
+        };
+      }
+
+      const sayHello = greet("Hello");
+      const sayHi = greet("Hi");
+
+      console.log(sayHello("Alice")); // "Hello, Alice!"
+      console.log(sayHi("Bob")); // "Hi, Bob!"
+
+      /* ---------------------------------------- */
+      // Reusable Discount Calculator
+      // Curried discount function
+      function calculateDiscount(discountRate) {
+        return function (price) {
+          return price - (price * discountRate) / 100;
+        };
+      }
+
+      // Create specific discount calculators
+      const studentDiscount = calculateDiscount(10); // 10% off
+      const memberDiscount = calculateDiscount(20); // 20% off
+      const blackFridayDiscount = calculateDiscount(50); // 50% off
+
+      console.log(studentDiscount(1000)); // 900
+      console.log(memberDiscount(1000)); // 800
+      console.log(blackFridayDiscount(1000)); // 500
+
+      /* ---------------------------------------- */
+      // API Request Builder
+      // Curried API request function
+      function createAPIRequest(baseURL) {
+        return function (endpoint) {
+          return function (method) {
+            return function (data) {
+              return {
+                url: `${baseURL}${endpoint}`,
+                method: method,
+                data: data,
+              };
+            };
+          };
+        };
+      }
+
+      // Create specific API configurations
+      const myAPI = createAPIRequest("https://api.example.com");
+      const usersEndpoint = myAPI("/users");
+      const getUser = usersEndpoint("GET");
+      const createUser = usersEndpoint("POST");
+
+      console.log(getUser());
+      // { url: 'https://api.example.com/users', method: 'GET', data: undefined }
+
+      console.log(createUser({ name: "John" }));
+      // { url: 'https://api.example.com/users', method: 'POST', data: { name: 'John' } }
+
+      /* ---------------------------------------- */
+      // Advanced: Generic Curry Function
+      // Auto-currying Utility
+      // Generic curry function that works with any function
+      function curry(fn) {
+        return function curried(...args) {
+          if (args.length >= fn.length) {
+            return fn.apply(this, args);
+          } else {
+            return function (...nextArgs) {
+              return curried.apply(this, args.concat(nextArgs));
+            };
+          }
+        };
+      }
+
+      // Usage with any function
+      function multiply(a, b, c) {
+        return a * b * c;
+      }
+
+      const curriedMultiply = curry(multiply);
+
+      console.log(curriedMultiply(2)(3)(4)); // 24
+      console.log(curriedMultiply(2, 3)(4)); // 24
+      console.log(curriedMultiply(2)(3, 4)); // 24
+      console.log(curriedMultiply(2, 3, 4)); // 24
+
+      // Partial application
+      const double = curriedMultiply(2);
+      const triple = double(3);
+      console.log(triple(4)); // 24
+
+      /* ---------------------------------------- */
+      // 1. Logger with Configuration
+      function createLogger(level) {
+        return function (component) {
+          return function (message) {
+            console.log(`[${level}] ${component}: ${message}`);
+          };
+        };
+      }
+
+      const errorLogger = createLogger("ERROR")("AuthService");
+      const debugLogger = createLogger("DEBUG")("Database");
+
+      errorLogger("Login failed"); // [ERROR] AuthService: Login failed
+      debugLogger("Query executed"); // [DEBUG] Database: Query executed
+
+      /* ---------------------------------------- */
+      // DOM Element Styler
+      function setStyle(element) {
+        return function (property) {
+          return function (value) {
+            element.style[property] = value;
+            return element;
+          };
+        };
+      }
+
+      const setDivStyle = setStyle(document.getElementById("myDiv"));
+      const setColor = setDivStyle("color");
+      const setBackground = setDivStyle("backgroundColor");
+
+      setColor("white");
+      setBackground("black");
+
+      /* ---------------------------------------- */
+    </script>
+  </body>
+</html>

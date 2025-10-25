@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Higher-Order Functions</title>
+  </head>
+  <body>
+    <h1>Please Check Browser Console</h1>
+
+    <script>
+      // A higher-order function is a function that either:
+      // Takes one or more functions as arguments, or
+      // Returns a function as its result, or Both
+
+      // Higher-order function that returns a new function
+      function createMultiplier(multiplier) {
+        // This inner function "remembers" the multiplier value (closure)
+        return function (number) {
+          return number * multiplier;
+        };
+      }
+
+      // Usage: Creating specialized multiplier functions
+      const double = createMultiplier(2);
+      const triple = createMultiplier(3);
+      const quadruple = createMultiplier(4);
+
+      // Using the created functions
+      console.log(double(5)); // 10 (5 * 2)
+      console.log(triple(5)); // 15 (5 * 3)
+      console.log(quadruple(5)); // 20 (5 * 4)
+
+      // Can reuse them multiple times
+      console.log(double(10)); // 20
+      console.log(triple(10)); // 30
+
+      /* --------------------------------------------------- */
+      // Another Example: Greeting Generator
+      // Higher-order function for creating greetings
+      function createGreeting(greeting) {
+        return function (name) {
+          return `${greeting}, ${name}!`;
+        };
+      }
+
+      // Create specific greeting functions
+      const sayHello = createGreeting("Hello");
+      const sayHi = createGreeting("Hi");
+      const sayGoodbye = createGreeting("Goodbye");
+
+      // Use them
+      console.log(sayHello("Alice")); // "Hello, Alice!"
+      console.log(sayHi("Bob")); // "Hi, Bob!"
+      console.log(sayGoodbye("Charlie")); // "Goodbye, Charlie!"
+    </script>
+  </body>
+</html>
