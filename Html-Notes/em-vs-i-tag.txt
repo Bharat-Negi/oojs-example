@@ -1,0 +1,22 @@
+HTML `<em>` vs `<i>` Explained:-
+
+Side-by-Side Comparison
+
+Feature          <em>                              <i>
+Type             Semantic (adds meaning)          Presentational (alternate voice)
+
+Purpose          Indicates linguistic stress      Represents text in an alternate voice
+                 or emphasis                      or mood (technical terms, thoughts,
+                                                  foreign phrases)
+
+Default Look     Italic                           Italic
+
+Accessibility    Screen readers announce it       Screen readers do not change
+                 with verbal stress (change       their tone. Read normally.
+                 in tone/pitch)
+
+SEO              Can hint at contextual emphasis  Treated as a pure styling/semantic
+                                                  offset, no emphasis weight
+                                                  
+Best For         Adding vocal stress to change    Technical terms, foreign words,
+                 sentence meaning                 taxonomic names, thoughts, ship names

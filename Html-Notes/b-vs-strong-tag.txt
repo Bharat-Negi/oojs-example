@@ -1,0 +1,20 @@
+HTML `<b>` vs `<strong>` Explained:-
+
+Side-by-Side Comparison
+
+Feature          <strong>                          <b>
+Type             Semantic (adds meaning)          Presentational (adds style)
+
+Purpose          Indicates importance,            Stylistically offsets text without
+                 seriousness, or urgency          added importance
+
+Default Look     Bold                             Bold
+
+Accessibility    Screen readers announce it       Screen readers do not change
+                 with emphasis (different tone)   their tone. Read normally.
+
+SEO              Can be used by search engines    Treated as pure styling choice,
+                 to understand key content        no semantic weight
+
+Best For         Warnings, critical information,  Product names, keywords,
+                 key points                       lead sentences, visual highlights
