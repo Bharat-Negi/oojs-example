@@ -1,0 +1,9 @@
+
+undefined vs null Comparison:-
+
+Aspect        undefined                         null
+Meaning       Variable exists but no value      Intentional empty value
+Type          "undefined"                       "object"
+Assignment    Automatic                         Manual
+Use Case      Missing values                    Clearing objects
+Equality      == true, === false                == true, === false

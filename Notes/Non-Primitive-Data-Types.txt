@@ -1,0 +1,26 @@
+Non-Primitive Data Types:-
+- Object
+- Array (technically a special type of object)
+- Function
+- Date
+- RegExp (Regular Expression)
+
+1. Object
+- Plain objects {}
+- Arrays [] (special type of object)
+- Dates new Date()
+- Regular Expressions /pattern/
+- Maps new Map()
+- Sets new Set()
+- WeakMaps new WeakMap()
+- WeakSets new WeakSet()
+
+2. Function
+- Regular functions function() {}
+- Arrow functions () => {}
+- Async functions async function() {}
+- Generator functions function*() {}
+
+3. Special Cases:
+- Array - technically an object but often considered separately
+- null - technically primitive but typeof null returns "object" (historical bug)

@@ -1,0 +1,16 @@
+Primitive Data Types:
+- Number - 100, 3.14, -5
+- String - "hello", 'world'
+- Boolean - true, false
+- Undefined - variable declared but not assigned
+- Null - intentional absence of value
+- BigInt - very large integers 123n
+- Symbol - unique identifiers
+
+
+Check Data Type:
+- console.log(typeof 100);        // "number"
+- console.log(typeof "hello");    // "string"
+- console.log(typeof true);       // "boolean"
+- console.log(typeof undefined);  // "undefined"
+- console.log(typeof null);       // "object" (this is a known quirk)

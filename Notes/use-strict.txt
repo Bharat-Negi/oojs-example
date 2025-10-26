@@ -1,0 +1,9 @@
+use strict is a directive in JavaScript that enables strict mode, which helps write safer and more secure JavaScript code by catching common errors and preventing the use of potentially problematic features.
+
+Why Use Strict Mode?
+- Catches common coding errors
+- Prevents accidental global variables
+- Makes code more optimized and faster
+- Prepares for future JavaScript versions
+- Improves code quality and security
+It's considered a best practice to always use 'use strict' in modern JavaScript development.
