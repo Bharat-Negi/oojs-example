@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>impure function and pure function</title>
+</head>
+<body>
+    <h1>Please Check Browser Console</h1>
+
+    <script>
+        // Pure functions have no side effects and always return the same output for the same input.
+        function add(a,b){
+            return a + b
+        }
+        console.log(add(2,3)); // result 5
+        console.log(add(2,3)); // result 5 (always same result)
+
+        // impure functions can have side effects and produce different outputs for the same input.
+        let count = 0;
+        function increment(){
+            count++ 
+            return count
+        }
+        console.log(increment()) // 1
+        console.log(increment()) // 2
+    </script>
+</body>
+</html>
