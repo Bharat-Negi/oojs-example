@@ -1,0 +1,10 @@
+3 Type of JavaScript Popup Boxes
+Important Characteristics
+
++--------------+------------------+----------------+---------------------+
+| Popup Type   | Blocks Execution | Return Value   | Styling             |
++--------------+------------------+----------------+---------------------+
+| Alert        | Yes              | undefined      | Cannot be customized|
+| Confirm      | Yes              | boolean        | Cannot be customized|
+| Prompt       | Yes              | string or null | Cannot be customized|
++--------------+------------------+----------------+---------------------+
