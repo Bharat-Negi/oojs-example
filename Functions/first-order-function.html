@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>First-Order Function</title>
+  </head>
+  <body>
+    <h1>Please Check Browser Console</h1>
+
+    <script>
+      /* 
+        A first-order function is a function that:
+
+        - Does not accept other functions as arguments
+        - Does not return a function as its result
+        - Treats functions as regular values (can be stored in variables, passed around)
+
+        Key Characteristics
+        - Operates on simple data types (numbers, strings, objects, etc.)
+        - Cannot take functions as parameters
+        - Cannot return functions
+        - Can be assigned to variables
+        - Can be stored in data structures
+        */
+
+      // First-order functions
+      const square = (x) => x * x;
+      const double = (x) => x * 2;
+
+      // Using first-order functions
+      console.log(square(5)); // 25
+      console.log(double(10)); // 20
+
+      // Storing in array
+      const operations = [square, double];
+      console.log(operations[0](4)); // 16
+
+      // Regular functions that don't take/return functions
+      function add(a, b) {
+        return a + b;
+      }
+
+      const multiply = function (x, y) {
+        return x * y;
+      };
+
+      const greet = (name) => {
+        return `Hello, ${name}!`;
+      };
+
+      console.log(multiply(2, 3));
+      console.log(greet(name));
+    </script>
+  </body>
+</html>

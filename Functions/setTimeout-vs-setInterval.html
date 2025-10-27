@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>setTimeout vs setInterval</title>
+  </head>
+  <body>
+    <h1>Please Check Browser Console</h1>
+
+    <script>
+      /*
+        Key Differences Table
+
+        Feature           setTimeout                      setInterval
+        Execution         Once                            Repeated
+        Timing Control    Better for sequential tasks     Fixed intervals
+        Memory Usage      Cleans up after execution       Runs until cleared
+        Error Handling    Single execution error          Continuous execution errors
+        Use Case          Delayed actions, debouncing     Periodic updates, animations
+    */
+
+      // setTimeout
+      // Execute once after 2 seconds
+      setTimeout(() => {
+        console.log("This runs once after 2 seconds");
+      }, 2000);
+
+      // With parameters
+      setTimeout(
+        (name, age) => {
+          console.log(`Hello ${name}, you are ${age} years old`);
+        },
+        1000,
+        "John",
+        25
+      );
+
+      // Store and clear timeout
+      const timeoutId = setTimeout(() => {
+        console.log("This will be cancelled");
+      }, 3000);
+
+      clearTimeout(timeoutId); // Cancels the timeout
+
+      /* ---------------------------------- */
+      // setInterval
+      // Execute every 1 second
+      const intervalId = setInterval(() => {
+        console.log("This runs every second");
+      }, 1000);
+
+      // Stop after 5 seconds
+      setTimeout(() => {
+        clearInterval(intervalId);
+        console.log("Interval stopped");
+      }, 5000);
+
+      // Counter example
+      let count = 0;
+      const counterId = setInterval(() => {
+        count++;
+        console.log(`Count: ${count}`);
+        if (count >= 10) {
+          clearInterval(counterId);
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>
