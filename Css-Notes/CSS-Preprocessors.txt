@@ -1,0 +1,11 @@
+3 Type of CSS Preprocessors
+
+1. SCSS/ SASS
+(Sassy CSS/ (Syntactically Awesome Stylesheets))
+File extension .scss
+
+2. LESS
+File extension .less
+
+3. Stylus
+File extension .styl

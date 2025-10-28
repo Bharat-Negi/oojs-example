@@ -1,0 +1,10 @@
+What is CSS Box Model?
+
+Answer:-
+- This box defines design and layout of elements of CSS.
+
+The element are:-
+- Margin: the topmost layer, the overall structure is shown
+- Border: the padding and content option with a border around it is shown, Background color affects the border.
+- Padding: Space is shown. Background color affects the border.
+- Content: Actual content is shown.

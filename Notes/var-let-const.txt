@@ -1,0 +1,5 @@
+Difference between let, const and var in JavaScript?
+
+- var:- can be re-defined and re-assigned. is global scope.
+- let:- can be re-assigned but cannot be re-defined. Scope is in the block defined.
+- const:- cannot be re-defined and re-assigned.

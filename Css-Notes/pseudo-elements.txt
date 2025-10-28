@@ -1,0 +1,16 @@
+What are Pseudo Elements in CSS?
+
+Answer
+- Pseudo-element are used to add special effects to some selector.
+- CSS in used to apply style in HTML mark-up.
+- In some cases when extra mark-up or styling is not possible for the document, then there is a feature available is CSS know as pseudo-element
+- It will allow extra mark-up to the document without disturbing the actual document.
+
+Example of Pseudo Element are:-
+p::first-line{
+    color: red;
+    font-variant: small-cap;
+}
+
+p::before{}
+p::after{}

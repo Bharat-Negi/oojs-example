@@ -1,0 +1,11 @@
+Selectors In CSS:-
+
+In CSS, Selectors are patterns that are used to select and style HTML elements.
+
+Type Of Selectors
+1. ID Selector (#)
+2. Class Selector (.)
+3. Element Selector (no symbol)
+4. Universal Selector (*)
+5. Descendant Selector
+6. Child Selector (>)

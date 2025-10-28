@@ -1,0 +1,11 @@
+What are Pseudo Classes in CSS?
+
+A pseudo-classes is used to defined a special state of an element.
+selector:pseudo-class{
+    property: value;
+}
+
+- Example
+a:link{
+    color: red;
+}

@@ -1,0 +1,199 @@
+In JavaScript, functions can be categorized in several ways. Here's a comprehensive overview of the different types of functions:
+
+1. Declaration Types:-
+Function Declaration (Named Function)
+function add(a, b) {
+    return a + b;
+}
+
+Function Expression:-
+const multiply = function(a, b) {
+    return a * b;
+};
+
+Arrow Function (ES6+):-
+const divide = (a, b) => a / b;
+const square = x => x * x;
+
+Generator Function:-
+function* numberGenerator() {
+    yield 1;
+    yield 2;
+    yield 3;
+}
+
+Async Function:-
+async function fetchData() {
+    const response = await fetch('/api/data');
+    return response.json();
+}
+
+------------------------------------------------------------------------
+
+2. Parameter Patterns
+Regular Parameters:-
+function regular(a, b, c) {
+    return a + b + c;
+}
+
+Default Parameters:-
+function greet(name = 'Guest') {
+    return `Hello, ${name}!`;
+}
+
+Rest Parameters:-
+function sum(...numbers) {
+    return numbers.reduce((total, num) => total + num, 0);
+}
+
+Destructured Parameters:-
+function displayUser({name, age, email}) {
+    return `${name} (${age}) - ${email}`;
+}
+
+------------------------------------------------------------------------
+
+3. Special Function Types
+Immediately Invoked Function Expression (IIFE):-
+(function() {
+    console.log('I run immediately!');
+})();
+
+// Arrow IIFE
+(() => {
+    console.log('Arrow IIFE');
+})();
+
+Higher-Order Functions:-
+// Functions that take other functions as arguments or return functions
+function createMultiplier(factor) {
+    return function(x) {
+        return x * factor;
+    };
+}
+
+const double = createMultiplier(2);
+
+Callback Functions:-
+function processData(data, callback) {
+    // Process data
+    const result = data * 2;
+    // Execute callback
+    callback(result);
+}
+
+processData(5, function(result) {
+    console.log('Result:', result);
+});
+
+Recursive Functions:-
+function factorial(n) {
+    if (n <= 1) return 1;
+    return n * factorial(n - 1);
+}
+
+Method (Function as Object Property):-
+const person = {
+    name: 'John',
+    greet: function() {
+        return `Hello, I'm ${this.name}`;
+    }
+    // or using shorthand:
+    // greet() { return `Hello...`; }
+};
+
+Constructor Function:-
+function Person(name, age) {
+    this.name = name;
+    this.age = age;
+}
+
+const john = new Person('John', 30);
+
+------------------------------------------------------------------------
+
+4. ES6+ Class Methods
+class Calculator {
+    // Instance method
+    add(a, b) {
+        return a + b;
+    }
+    
+    // Static method
+    static multiply(a, b) {
+        return a * b;
+    }
+    
+    // Getter
+    get description() {
+        return 'A calculator class';
+    }
+}
+
+------------------------------------------------------------------------
+
+5. Specialized Functions
+Pure Functions:-
+// Same input always produces same output, no side effects
+function pureAdd(a, b) {
+    return a + b;
+}
+
+Impure Functions:-
+// Has side effects or depends on external state
+let counter = 0;
+function impureIncrement() {
+    counter++;
+    return counter;
+}
+
+Closure Functions:-
+function createCounter() {
+    let count = 0;
+    return function() {
+        count++;
+        return count;
+    };
+}
+
+const counter = createCounter();
+
+Memoized Functions:-
+function memoizedFibonacci() {
+    const cache = {};
+    return function fib(n) {
+        if (n in cache) return cache[n];
+        if (n <= 1) return n;
+        cache[n] = fib(n - 1) + fib(n - 2);
+        return cache[n];
+    };
+}
+
+------------------------------------------------------------------------
+
+6. Function Properties
+First-Class Functions:-
+// Functions can be assigned to variables
+const myFunc = function() { /* ... */ };
+
+// Passed as arguments
+[1, 2, 3].map(x => x * 2);
+
+// Returned from other functions
+function createLogger() {
+    return function(message) {
+        console.log(message);
+    };
+}
+
+------------------------------------------------------------------------
+
+Summary by Category:
+| Category          | Examples                                        |
+|-------------------|-------------------------------------------------|
+| Declaration Style | Declaration, Expression, Arrow, Generator, Async |
+| Parameter Handling| Regular, Default, Rest, Destructured            |
+| Special Patterns  | IIFE, Higher-Order, Callback, Recursive         |
+| Object Context    | Method, Constructor, Class Methods              |
+| Behavior          | Pure, Impure, Closure, Memoized                 |
+| Usage             | First-Class, Higher-Order                       |
