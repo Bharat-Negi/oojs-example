@@ -1,0 +1,10 @@
+The differences between em, rem, %, and px.
+
+The Quick Answer
+- px (Pixels): An absolute unit. 1px is always one dot on the screen. Simple and predictable, but not scalable for accessibility.
+
+- % (Percent): A relative unit. It's a percentage of the parent element's value for the same property.
+
+- em: A relative unit. It's relative to the font-size of its parent element (for typography) or the element itself (for other properties like margin and padding).
+
+- rem (Root em): A relative unit. It's only relative to the root (<html>) element's font-size. This makes it predictable and easy to manage.

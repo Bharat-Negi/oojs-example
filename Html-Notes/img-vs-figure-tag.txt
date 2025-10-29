@@ -1,21 +1,25 @@
 
 Key Differences Summary Table:-
 
-Feature           <img> Tag                          <figure> Tag
------------------------------------------------------------------------------------------------
-Purpose           To embed and display an image.     To group content with an optional caption.
-
-Content           It is the content (the image).     It contains content (like an <img>).
-
-Caption           Cannot provide a semantic          Can contain a <figcaption> for a
-                  caption on its own.                semantic caption.
-
-Semantics         No inherent semantic meaning       Provides strong semantic meaning:
-                  about its relationship to the      "This content is a self-contained figure."
-                  text.
-
-Accessibility     Relies on the alt attribute        Provides a structured relationship between
-                  for context.                       the image and its caption for screen readers.
-
-Standalone        Can be used completely by itself.  Almost always used as a wrapper for
-                                                     other elements.
++------------------+---------------------------------+-----------------------------------------+
+| Feature          | <img> Tag                       | <figure> Tag                           |
++------------------+---------------------------------+-----------------------------------------+
+| Purpose          | To embed and display an image.  | To group content with an optional      |
+|                  |                                 | caption.                               |
++------------------+---------------------------------+-----------------------------------------+
+| Content          | It is the content (the image).  | It contains content (like an <img>).   |
++------------------+---------------------------------+-----------------------------------------+
+| Caption          | Cannot provide a semantic       | Can contain a <figcaption> for a       |
+|                  | caption on its own.             | semantic caption.                      |
++------------------+---------------------------------+-----------------------------------------+
+| Semantics        | No inherent semantic meaning    | Provides strong semantic meaning:      |
+|                  | about its relationship to the   | "This content is a self-contained      |
+|                  | text.                           | figure."                               |
++------------------+---------------------------------+-----------------------------------------+
+| Accessibility    | Relies on the alt attribute     | Provides a structured relationship     |
+|                  | for context.                    | between the image and its caption for  |
+|                  |                                 | screen readers.                        |
++------------------+---------------------------------+-----------------------------------------+
+| Standalone       | Can be used completely by       | Almost always used as a wrapper for    |
+|                  | itself.                         | other elements.                        |
++------------------+---------------------------------+-----------------------------------------+

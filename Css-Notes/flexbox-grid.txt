@@ -1,0 +1,22 @@
+Summary Table: CSS Flexbox vs CSS Grid
+
++------------------+------------------------------------+---------------------------------------+
+| Feature          | CSS Flexbox                        | CSS Grid                              |
++------------------+------------------------------------+---------------------------------------+
+| Dimension        | One-dimensional (row or column)    | Two-dimensional (rows and columns)    |
++------------------+------------------------------------+---------------------------------------+
+| Core Concept     | Content-out. You style the         | Layout-in. You define the structure   |
+|                  | container, and the items flex      | first, then place items into it.      |
+|                  | to fit.                            |                                       |
++------------------+------------------------------------+---------------------------------------+
+| Alignment Control| Powerful alignment along a single  | Powerful alignment in both axes       |
+|                  | axis.                              | simultaneously.                       |
++------------------+------------------------------------+---------------------------------------+
+| Use Case         | Component-level layouts and        | Page-level and large-scale layouts.   |
+|                  | small-scale UI.                    |                                       |
++------------------+------------------------------------+---------------------------------------+
+| Overlap          | Items can be reordered but not     | Items can be easily positioned to     |
+|                  | easily overlapped.                 | overlap.                              |
++------------------+------------------------------------+---------------------------------------+
+| Browser Support  | Excellent                          | Excellent (modern browsers)           |
++------------------+------------------------------------+---------------------------------------+

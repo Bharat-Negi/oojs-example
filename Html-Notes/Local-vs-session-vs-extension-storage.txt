@@ -1,0 +1,14 @@
+Local storage vs session storage vs extension storage
+
++------------------+--------------------------+--------------------------+--------------------------+
+| Feature          | Local Storage            | Session Storage          | Extension Storage (local)|
++------------------+--------------------------+--------------------------+--------------------------+
+| Persistence      | Permanent until cleared  | Tab/window session only  | Permanent until cleared  |
+| Scope            | Per origin               | Per tab/window           | Per extension            |
+|                  | (shared across tabs)     | (isolated)               |                          |
+| Capacity         | ~5-10MB                  | ~5-10MB                  | ~10MB+ (extensible)      |
+| Access           | Any page from same origin| Only same tab            | Extension context only   |
+| API              | Synchronous              | Synchronous              | Asynchronous             |
+| Data Types       | Only strings (use JSON)  | Only strings (use JSON)  | Objects, arrays, etc.    |
+| Performance      | Can block UI on large ops| Can block UI on large ops| Non-blocking             |
++------------------+--------------------------+--------------------------+--------------------------+
