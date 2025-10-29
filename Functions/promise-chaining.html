@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise Chaining</title>
+</head>
+<body>
+    <h1>Please Check Browser Console</h1>
+
+    <script>
+        let p1 = new Promise((resolve, reject)=>{
+            setTimeout(() => {
+                console.log("Resolved after 2 seconds")
+                resolve(56)
+            }, 2000);
+        })
+
+        p1.then((value)=>{
+            console.log(value);
+            return new Promise((resolve, reject)=>{
+                setTimeout(() => { resolve("Promise 2") }, 2000);
+            })
+        }).then((value)=>{
+            console.log("We are done");
+        }).then((value)=>{
+            console.log("Now we are finally done");
+        })
+    </script>
+</body>
+</html>

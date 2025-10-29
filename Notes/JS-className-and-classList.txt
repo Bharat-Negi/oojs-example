@@ -1,0 +1,12 @@
+JavaScript: className and classList
+
+<div id="first" class="red">
+    <span>Hey I am Good</span>
+</div>
+
+first.className = "text-black yellow"; // to change the class
+first.classList // to list all class in element
+first.classList.removed("red") // to remove the class
+first.classList.add("green") // to add the class
+first.classList.toggle("green") // to toggle the class
+first.className.contains("red") // to check the class present or not and give true/false value.
