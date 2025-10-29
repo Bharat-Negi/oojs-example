@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Delegation</title>
+  </head>
+  <body>
+    <h1>Please Check Browser Console</h1>
+
+    <script>
+      /*
+        Event Delegation is a JavaScript technique where you attach a single event listener to a parent element instead of attaching multiple listeners to individual child elements. The parent "delegates" handling events for all its children through event bubbling.
+
+        In simple words: Let the parent handle events for all its children, rather than putting separate handlers on every child.
+        */
+
+      // Event Delegation = Let the parent handle events for all children
+
+      // Without Event Delegation:
+      // Add click to EACH button
+      button1.addEventListener("click", handleClick);
+      button2.addEventListener("click", handleClick);
+      button3.addEventListener("click", handleClick);
+      // ...and so on for every button
+
+      // With Event Delegation:
+      // Add ONE click to parent
+      parent.addEventListener("click", function (event) {
+        if (event.target.tagName === "BUTTON") {
+          handleClick(event);
+        }
+      });
+    </script>
+  </body>
+</html>

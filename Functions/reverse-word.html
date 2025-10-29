@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reverse with out using reverse() method</title>
+  </head>
+  <body>
+    <h1>Please Check Browser Console</h1>
+
+    <script>
+      // Method 1: Using a for loop
+      let str = "Bharat Singh Negi";
+      let reversed = "";
+      for (let i = str.length - 1; i >= 0; i--) {
+        reversed += str[i];
+      }
+      console.log(reversed); // "igeN hgniS tarahB"
+
+      /* ------------------------------------------------------- */
+      //Method 2: Using array methods
+      let str1 = "Rahul Singh Negi";
+      let reversed1 = str1.split("").reduce((acc, char) => char + acc, "");
+
+      console.log(reversed1); // "igeN hgniS luhaR"
+
+      /* ------------------------------------------------------- */
+      // Method 3: Using spread operator and reduce
+      let str2 = "Pinky Negi";
+      let reversed2 = [...str2].reduce((acc, char) => char + acc, "");
+
+      console.log(reversed2); // "igeN ykniP"
+
+      /* ------------------------------------------------------- */
+      // Method 4: Using a while loop
+      let str3 = "Aahana Negi";
+      let reversed3 = "";
+
+      for (let char of str3) {
+        reversed3 = char + reversed3;
+      }
+
+      console.log(reversed3); // "igeN anahaA"
+
+      /* ------------------------------------------------------- */
+      //Method 5: Using array destructuring
+      let str4 = "Nidhi Negi";
+      let reversed4 = "";
+
+      for (let char of str4) {
+        reversed4 = char + reversed4;
+      }
+
+      console.log(reversed4); // "igeN hgniS tarahB"
+
+      /* ------------------------------------------------------- */
+    </script>
+  </body>
+</html>

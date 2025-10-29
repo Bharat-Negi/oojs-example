@@ -1,0 +1,10 @@
+The Simple Answer
+CSS stands for Cascading Style Sheets.
+
+Let's break that down to make it easy to understand:
+
+- Cascading: This refers to the way CSS applies rules. Think of a waterfall cascading down. Styles can "flow" from a general rule to a more specific one. If you set a font for the entire page (general) but then specify a different font for a paragraph (specific), the more specific rule "wins." This system of priority is what "cascading" means.
+
+- Style: This is the main job of CSS. It's all about the visual presentation and layout of a web page.
+
+- Sheets: These are the files (with the .css extension) that contain the code for all these styles.

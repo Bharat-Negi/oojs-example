@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shallow and Deep copy</title>
+  </head>
+  <body>
+    <h1>Please Check Browser Console</h1>
+
+    <script>
+      /*
+          Shallow Copy :-
+          A shallow copy creates a new object, but doesn't create copies of the objects inside it. Instead, it copies references to the same nested objects.
+
+          What happens:
+          - A new "container" is created
+          - But the items inside point to the same objects as the original
+      */
+
+      const original = {
+        name: "Alice",
+        address: {
+          city: "New York",
+          zip: "10001",
+        },
+      };
+
+      // Shallow copy
+      const shallowCopy = { ...original };
+
+      // Let's test what happens
+      shallowCopy.name = "Bob"; // This only changes the copy
+      console.log(original.name); // "Alice" - unchanged
+
+      shallowCopy.address.city = "Los Angeles"; // This changes BOTH!
+      console.log(original.address.city); // "Los Angeles" - changed!
+
+      /* ----------------------------------------------------------- */
+      /* 
+        Deep Copy
+        A deep copy creates a completely independent duplicate where everything is copied, including all nested objects.
+
+        What happens:
+        - A new "container" is created
+        - All nested objects are also copied recursively
+        - The copy is completely independent from the original2
+      */
+      const original2 = {
+        name: "Alice",
+        address: {
+          city: "New York",
+          zip: "10001",
+        },
+      };
+
+      // Deep copy (one method)
+      const deepCopy = JSON.parse(JSON.stringify(original2));
+
+      // Let's test what happens
+      deepCopy.name = "Bob";
+      deepCopy.address.city = "Los Angeles";
+
+      console.log(original2.name); // "Alice" - unchanged
+      console.log(original2.address.city); // "New York" - unchanged!
+
+      // Now both objects are completely independent.
+
+      /*
+        +───────────────────+──────────────────────+──────────────────+
+        |      Aspect       |    Shallow Copy      |    Deep Copy     |
+        +───────────────────+──────────────────────+──────────────────+
+        | Nested Objects    | Shares references    | Creates new      |
+        |                   |                      | copies           |
+        +───────────────────+──────────────────────+──────────────────+
+        | Memory Usage      | Lower                | Higher           |
+        +───────────────────+──────────────────────+──────────────────+
+        | Performance       | Faster               | Slower           |
+        +───────────────────+──────────────────────+──────────────────+
+        | Independence      | Partial              | Complete         |
+        +───────────────────+──────────────────────+──────────────────+
+        | Modification      | Risky                | Safe             |
+        | Safety            |                      |                  |
+        +───────────────────+──────────────────────+──────────────────+
+      */
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Please Check Browser Console</h1>
+
+    <script>
+        console.log(JSON.stringify({a:1,b:undefined})); // output {"a":1}
+        /*
+            Explanation
+            When you use JSON.stringify() with an object containing undefined values:
+            - Properties with undefined values are completely omitted from the result.
+            - Only the property "a":1 is included in the stringified output.
+            - The b property is removed because its value is undefined.
+        */
+    </script>
+</body>
+</html>

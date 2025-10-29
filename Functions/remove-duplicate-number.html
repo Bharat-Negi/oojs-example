@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Remove Duplicate Number in array</title>
+  </head>
+  <body>
+    <h1>Please Check Browser Console</h1>
+
+    <script>
+      // free type
+      const arrOne = ["hello","test","kumar","hello","test","neck"];
+      const findUnique = (a) => {
+        let freq = {}, result =[];
+        for (let j=0; j < a.length; j++){
+            if(freq[a[j]]===1)
+            continue;
+         else{
+            result.push(a[j]);
+            freq[a[j]] = 1;
+         }
+        }
+        return result
+      }
+      console.log(findUnique(arrOne));
+
+      // Method 1: Using Set (Simplest)
+      const arr = ["test", "test", "kumar", "kumar", 1, 2, 3, 3, 4, 4, false];
+      const uniqueArr = [...new Set(arr)];
+      console.log(uniqueArr); // ['test', 'kumar', 1, 2, 3, 4, false]
+
+      /* ------------------------------------------------------- */
+      // Method 2: Using filter() with indexOf()
+      const arr1 = [1, 2, 3, 3, 4, 5, 6, 6, 6, 7, 8, 9, 10];
+      const uniqueArr1 = arr1.filter(
+        (item, index) => arr1.indexOf(item) === index
+      );
+      console.log(uniqueArr1); // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+      /* ------------------------------------------------------- */
+      // Method 3: Using reduce()
+      const arr2 = [1, 2, 3, 3, 4, 5, 6, 6, 6, 7, 8, 8];
+      const uniqueArr2 = arr2.reduce((acc, current) => {
+        if (!acc.includes(current)) {
+          acc.push(current);
+        }
+        return acc;
+      }, []);
+      console.log(uniqueArr2); // [1, 2, 3, 4, 5, 6, 7, 8]
+
+      /* ------------------------------------------------------- */
+      // Method 4: Using forEach()
+      const arr3 = [1, 2, 3, 3, 4, 5, 6, 6, 6, 7, 8, 8, 9, 11];
+      const uniqueArr3 = [];
+      arr3.forEach((item) => {
+        if (!uniqueArr3.includes(item)) {
+          uniqueArr3.push(item);
+        }
+      });
+      console.log(uniqueArr3); // [1, 2, 3, 4, 5, 6, 7, 8, 9, 11]
+
+      /* ------------------------------------------------------- */
+      // Method 5: Using for loop
+      const arr4 = [1, 2, 3, 3, 4, 5, 6, 6, 6, 7, 8, 8, 9, 12];
+      const uniqueArr4 = [];
+      for (let i = 0; i < arr4.length; i++) {
+        if (!uniqueArr4.includes(arr4[i])) {
+          uniqueArr4.push(arr4[i]);
+        }
+      }
+      console.log(uniqueArr4); // [1, 2, 3, 4, 5, 6, 7, 8, 9, 12]
+
+      /* ------------------------------------------------------- */
+      // Method 6: Using Object (for primitive values)
+      const arr5 = [1, 2, 3, 3, 4, 5, 6, 6, 6, 7, 8, 8, 9, 13];
+      const uniqueArr5 = Object.keys(
+        arr5.reduce((acc, curr) => {
+          acc[curr] = true;
+          return acc;
+        }, {})
+      ).map(Number);
+      console.log(uniqueArr5); // [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+      /* ------------------------------------------------------- */
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Big Words</title>
+</head>
+<body>
+    <h1>Please Check Browser Console</h1>
+
+    <script>
+        const str = 'test 111111 2222222 3333 4444444444 5555';
+        const arr = str.split(" ");
+        let largestChar = '';
+        
+        // console.log(arr);
+
+        arr.map((ele)=>{
+            if(ele.length > largestChar.length){
+                largestChar = ele
+            }
+        })
+
+        console.log(largestChar);
+    </script>
+</body>
+</html>
