@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Async Await</title>
+  </head>
+  <body>
+    <h1>Please Check Browser Console</h1>
+
+    <script>
+      async function bharat() {
+        let delhiWeather = new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve("30 Deg");
+          }, 2000);
+        });
+
+        let bangaloreWeather = new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve("22 Deg");
+          }, 5000);
+        });
+
+        // delhiWeather.then(alert)
+        // bangaloreWeather.then(alert)
+
+        console.log("Fetching Delhi Weather Please wait ...");
+        let delhiW = await delhiWeather;
+        console.log("Fetched Delhi Weather: " + delhiW);
+        console.log("Fetching Bangalore Weather Please wait ...");
+        let bangaloreW = await bangaloreWeather;
+        console.log("Fetched Bangalore Weather: " + bangaloreW);
+        return [delhiW, bangaloreW];
+      }
+
+      // bharat();
+
+      const cherry = async () => {
+        console.log("Hey I am cherry and I am waiting ");
+      };
+
+      const main = async () => {
+        console.log("Welcome to weather control room");
+        let a = await bharat();
+        let b = await cherry();
+      };
+
+      main();
+    </script>
+  </body>
+</html>

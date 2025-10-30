@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Error Object & Custom Errors</title>
+  </head>
+  <body>
+    <h1>Please Check Browser Console</h1>
+
+    <script>
+      try {
+        let age = prompt("Enter your age");
+        age = Number.parseInt(age);
+        if (age > 90) {
+          throw new ReferenceError("This is probably not true");
+        }
+      } catch (error) {
+        console.log(error.name);
+        console.log(error.message);
+        console.log(error.stack);
+      }
+
+      console.log("The script is still running");
+    </script>
+  </body>
+</html>
