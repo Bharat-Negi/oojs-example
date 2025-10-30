@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Session Storage</title>
+  </head>
+  <body>
+    <h1>Please Check Browser Console</h1>
+
+    <script>
+      // sessionStorage.getItem("name")
+      // sessionStorage.clear()
+      // sessionStorage.removeItem("name")
+      // sessionStorage.setItem("name", "harry")
+      // sessionStorage.removeItem("name")
+
+      let key = prompt("Enter key you want to set");
+      let value = prompt("Enter value you want to set");
+
+      sessionStorage.setItem(key, value);
+
+      console.log(`The value at ${key} is ${sessionStorage.getItem(key)}`);      
+
+      // alert when change the local or session storage key or value
+      window.onstorage = (e) => {
+        alert("changed");
+        console.log(e);
+      };
+    </script>
+  </body>
+</html>
