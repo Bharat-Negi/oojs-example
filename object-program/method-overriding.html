@@ -28,7 +28,7 @@
       class Programmer extends Employee {
         constructor(name) {
           super(name);
-          console.log(`This is a newly written constructor`);
+          console.log(`${name} This is a newly written constructor`);
         }
         // constructor(...args){ ---> If there is no constructor in the child class, this is created automatically
         //   super(...args)
@@ -43,7 +43,7 @@
         }
       }
 
-      let e = new Programmer("Harry");
+      let e = new Programmer("Bharat Negi");
       e.login();
       e.requestLeaves(3);
     </script>

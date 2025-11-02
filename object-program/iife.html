@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Immediately Invoked Function Expressions (IIFE)</title>
+  </head>
+  <body>
+    <h1>Please Check Browser Console</h1>
+
+    <script>
+      let a = () => {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve(456);
+          }, 3000);
+        });
+      };
+
+      (async () => {
+        let b = await a();
+        console.log(b);
+        let c = await a();
+        console.log(c);
+        let d = await a();
+        console.log(d);
+      })();
+
+      // console.log(d) // Throws error
+
+    </script>
+  </body>
+</html>
