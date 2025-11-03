@@ -1,0 +1,9 @@
+what is accessibility in html:-
+
+Quick Checklist for Getting Started
+1. Use headings correctly: <h1> to <h6> in a logical, nested order. Don't skip levels.
+2. Add alt text to all informative images.
+3. Use native HTML elements like <button>, <nav>, <main>, <header>, and <label>.
+4. Ensure sufficient color contrast between text and background.
+5. Make all functionality available from a keyboard.
+6. Test your site: Use the keyboard to navigate, and try a screen reader (like NVDA on Windows or VoiceOver on Mac). Use automated tools like the WAVE Evaluation Tool browser extension.
