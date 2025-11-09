@@ -21,3 +21,5 @@ Side-by-Side Comparison
 | Best For         | Warnings, critical information, | Product names, keywords,                |
 |                  | key points                      | lead sentences, visual highlights       |
 +------------------+---------------------------------+-----------------------------------------+
+
+

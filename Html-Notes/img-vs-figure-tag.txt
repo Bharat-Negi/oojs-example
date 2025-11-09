@@ -23,3 +23,4 @@ Key Differences Summary Table:-
 | Standalone       | Can be used completely by       | Almost always used as a wrapper for    |
 |                  | itself.                         | other elements.                        |
 +------------------+---------------------------------+-----------------------------------------+
+
