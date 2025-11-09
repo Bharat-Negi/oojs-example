@@ -1,11 +1,15 @@
 Some() and Every() Method in JavaScript
 Key Differences & When to Use
 
-+----------------------+---------------------------------+---------------------------------+
-| Aspect               | some()                         | every()                         |
-+----------------------+---------------------------------+---------------------------------+
-| Returns true when    | At least one element passes     | All elements pass               |
-| Returns false when   | No elements pass               | At least one element fails      |
-| Short-circuits on    | First truthy value             | First falsy value              |
-| Empty array          | Returns: false                 | Returns: true                  |
-+----------------------+---------------------------------+---------------------------------+
++----------------------+------------------------------------+---------------------------------+
+| Aspect               | some()                             | every()                         |
++----------------------+------------------------------------+---------------------------------+
+| Returns true when    | At least one element passes        | All elements pass               |
++----------------------+------------------------------------+---------------------------------+
+| Returns false when   | No elements pass                   | At least one element fails      |
++----------------------+------------------------------------+---------------------------------+
+| Short-circuits on    | First truthy value                 | First falsy value               |
++----------------------+------------------------------------+---------------------------------+
+| Empty array          | Returns: false                     | Returns: true                   |
++----------------------+------------------------------------+---------------------------------+
+

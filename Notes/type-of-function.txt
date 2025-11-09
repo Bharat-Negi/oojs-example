@@ -189,11 +189,18 @@ function createLogger() {
 ------------------------------------------------------------------------
 
 Summary by Category:
-| Category          | Examples                                        |
-|-------------------|-------------------------------------------------|
-| Declaration Style | Declaration, Expression, Arrow, Generator, Async |
-| Parameter Handling| Regular, Default, Rest, Destructured            |
-| Special Patterns  | IIFE, Higher-Order, Callback, Recursive         |
-| Object Context    | Method, Constructor, Class Methods              |
-| Behavior          | Pure, Impure, Closure, Memoized                 |
-| Usage             | First-Class, Higher-Order                       |
++-------------------+-------------------------------------------------------------+
+| Category          | Examples                                                    |
++-------------------+-------------------------------------------------------------+
+| Declaration Style | Declaration, Expression, Arrow, Generator, Async            |
++-------------------+-------------------------------------------------------------+
+| Parameter Handling| Regular, Default, Rest, Destructured                        |
++-------------------+-------------------------------------------------------------+
+| Special Patterns  | IIFE, Higher-Order, Callback, Recursive                     |
++-------------------+-------------------------------------------------------------+
+| Object Context    | Method, Constructor, Class Methods                          |
++-------------------+-------------------------------------------------------------+
+| Behavior          | Pure, Impure, Closure, Memoized                             |
++-------------------+-------------------------------------------------------------+
+| Usage             | First-Class, Higher-Order                                   |
++-------------------+-------------------------------------------------------------+

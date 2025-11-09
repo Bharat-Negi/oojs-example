@@ -1,9 +1,19 @@
 
 undefined vs null Comparison:-
 
-Aspect        undefined                         null
-Meaning       Variable exists but no value      Intentional empty value
-Type          "undefined"                       "object"
-Assignment    Automatic                         Manual
-Use Case      Missing values                    Clearing objects
-Equality      == true, === false                == true, === false
++---------------------------+----------------------------------------+-------------------------------------+
+| Aspect                    | undefined                              | null                                |
++---------------------------+----------------------------------------+-------------------------------------+
+| Meaning                   | Variable exists but no value assigned  | Intentional empty value             |
++---------------------------+----------------------------------------+-------------------------------------+
+| Type                      | "undefined"                            | "object"                            |
++---------------------------+----------------------------------------+-------------------------------------+
+| Assignment                | Automatic (by JavaScript)              | Manual (set by developer)           |
++---------------------------+----------------------------------------+-------------------------------------+
+| Use Case                  | Missing or uninitialized values        | Clearing or resetting variables     |
++---------------------------+----------------------------------------+-------------------------------------+
+| Equality (==)             | true                                   | true                                |
++---------------------------+----------------------------------------+-------------------------------------+
+| Strict Equality (===)     | false                                  | false                               |
++---------------------------+----------------------------------------+-------------------------------------+
+
