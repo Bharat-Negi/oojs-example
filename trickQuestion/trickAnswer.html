@@ -36,11 +36,73 @@
       console.log([]==[]); // This condition will always return 'false' since JavaScript compares objects by reference, not value.
 
       /* --------------------- --------------------- */
+      console.log({}==={}); // false - compares two distinct objects 
+      console.log({}=={}); // false - also compares object references, not their values
+      // Sometimes people think {} might be treated like an empty value (like [] or 0), but object equality is always by reference, not by value.
 
+      /* --------------------- --------------------- */
+      var a = 12;
+      console.log(a ** 12) // same as Math.pow() 12 12 time multiply
+
+      /* --------------------- --------------------- */
+      function test(){
+        salary = 12000,
+        console.log(salary)
+      }
+      test() // Answer: 12000
+
+      /* --------------------- --------------------- */
+      function testTwo(){
+        console.log(testTwo.abc)
+      }
+      testTwo() // Answer: undefined
+      testTwo.abc = 400;
+      testTwo.abc = 600;
+      testTwo() // Answer: 600 
+
+      /* --------------------- --------------------- */
+      let an = 10; // Primitive number.
+      let b = new Number(10); // Creates a Number object, not a primitive. So typeof b → "object".
+      let c = 10; // Another primitive number. 
+
+      console.log(an === b); // false = primitive vs object
+      console.log(b === c); // false = object vs primitive
+
+      /* --------------------- --------------------- */
+      console.log(+true); // The unary + operator tries to convert its operand to a number.
+      // true → when converted to a number → 1.
+      // +true // Answer: 1
+      console.log(+false); // Answer: 0
+      console.log(!'test'); // The logical NOT ! operator converts the value to a boolean, then negates it.
+      // Non-empty strings (like 'test') are truthy.
+      // !'test' → !true → false.
+      // Answer: false
+
+
+      /* --------------------- --------------------- */
+      var aa = {}
+      var bb = {key:'bb'}
+      var cc = {Key:'cc'}
+
+      aa[bb] = 600; // aa[bb] → aa["[object Object]"]
+      bb[cc] = 700; // bb[cc] → bb["[object Object]"]
+
+      console.log(aa[cc]); // Answer: 600
+      console.log(aa[bb]); // Answer: 600
+      console.log(bb[bb]); // Answer: 700
+      console.log(bb[cc]); // Answer: 700
+
+      /* --------------------- --------------------- */
 
 
       /* --------------------- --------------------- */
 
+
+      /* --------------------- --------------------- */
+
+      /* --------------------- --------------------- */
+
+      /* --------------------- --------------------- */
 
 
       /* --------------------- --------------------- */
