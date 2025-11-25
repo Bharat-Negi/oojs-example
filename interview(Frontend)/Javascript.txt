@@ -1,0 +1,122 @@
+
+Basics JavaScript Questions:-
+1.	What are the different data types in JavaScript?
+2.	Difference between `var`, `let`, and `const`.
+3.	What is `NaN` and how to check if a value is NaN?
+4.	What are template literals?
+5.	How does type coercion work in JavaScript?
+6.	What is the difference between a function declaration and a function expression?
+7.	What are arrow functions, and how are they different from regular functions?
+8.	What is hoisting in JavaScript?
+9.	Difference between `==` and `===`.
+10.	Explain scope (global, function, block).
+11.	What is closure? Can you give an example?
+12.	What are truthy and falsy values?
+13.	Explain event bubbling and event delegation.
+14.	What is the difference between `null`, `undefined`, and `NaN`?
+
++--------------------------------------------------------------------------------------------------------+
+Intermediate JavaScript Questions:-
+1.	What is the difference between synchronous and asynchronous code?
+2.	How do Promises work in JavaScript?
+3.	Explain async/await with an example.
+4.	What is an Event Loop in JavaScript?
+5.	What is closure in JavaScript? Give an example.
+6.	What is currying in JavaScript?
+7.	What is the difference between shallow copy and deep copy in JavaScript?
+8.	How does prototypal inheritance work?
+9.	What are higher-order functions?
+
++--------------------------------------------------------------------------------------------------------+
+Advanced JavaScript Questions:-
+1.	Explain the concept of execution context and call stack.
+2.	What is the difference between `map()`, `forEach()`, `filter()`, and `reduce()`?
+3.	What is memoization? How can you implement it in JavaScript?
+4.	Explain event delegation.
+5.	What are JavaScript modules? Difference between CommonJS and ES6 modules.
+6.	What is the difference between `localStorage`, `sessionStorage`, and `cookies`?
+7.	What is the difference between `setTimeout`, `setInterval`, and `requestAnimationFrame`?
+8.	What are Web Workers in JavaScript?
+9.	How does garbage collection work in JavaScript?
+10.	Explain debouncing and throttling with use cases.
+11.	Event Bubbling vs Capturing – How events propagate in the DOM (addEventListener 3rd argument).
+12.	Difference between shallow equality and deep equality.
+13.	How does garbage collection work in JavaScript?
+14.	What are generators and `yield` in JavaScript?
+15.	Difference between ES6 modules (`import/export`) and CommonJS (`require/module.exports`).
+16.	What is currying in JavaScript?
+17.	What are weakMap and weakSet? How are they different from Map/Set?
+18.	Explain event loop phases (microtask vs macrotask).
+19.	What are service workers in JavaScript?
+
++--------------------------------------------------------------------------------------------------------+
+ES6+ and Modern Features:-
+1.	What are generators and iterators in JavaScript?
+2.	Explain destructuring with examples.
+3.	What is default, named, and dynamic imports?
+4.	What are Symbols in JavaScript?
+5.	What is the difference between `Object.freeze()` and `Object.seal()`?
+6.	What is optional chaining (`? .`) in JavaScript?
+7.	What is the difference between `for...in` and `for...of`?
+8.	How do you handle asynchronous errors in JavaScript?
+9.	What are Proxy objects in JavaScript?
+
++--------------------------------------------------------------------------------------------------------+
+Tricky / Practical Questions:-
+1.	How would you flatten a nested array in JavaScript?
+2.	How would you check if an object is empty?
+3.	How to deep clone an object in JavaScript?
+4.	How do you implement a polyfill for `bind()`?
+5.	How would you implement a debounce function?
+6.	Write a function to reverse a string in JavaScript.
+7.	How would you remove duplicates from an array?
+8.	How do you find the longest substring without repeating characters?
+9.	How do you implement a custom event emitter in JavaScript?
+10.	How would you implement your own Promise?
+
++--------------------------------------------------------------------------------------------------------+
+Functions & Objects:-
+1.	Explain the `this` keyword in JavaScript.
+2.	What are arrow functions? How are they different from regular functions?
+3.	What are IIFEs (Immediately Invoked Function Expressions)?
+4.	Explain call, apply, and bind with examples.
+5.	What is a prototype and prototypal inheritance?
+6.	What is object destructuring?
+7.	What is the difference between `map()`, `forEach()`, `filter()`, `reduce()`?
+8.	Event Delegation – Why attach event listeners to a parent instead of each child?
+9.	setTimeout vs setInterval vs requestAnimationFrame – When to use each?
+10.	 Memoization vs Caching – Differences and Use Cases.
+
++--------------------------------------------------------------------------------------------------------+
+Asynchronous JavaScript:-
+1.	What is the event loop in JavaScript?
+2.	Explain Promises and their states.
+3.	What are async/await? How do they work under the hood?
+4.	Difference between synchronous and asynchronous code.
+5.	What is a callback function? What is callback hell, and how can it be avoided?
+6.	What is the difference between Promise. all, Promise.any, Promise.race?
+7.	What is an AbortController in JavaScript?
+
++--------------------------------------------------------------------------------------------------------+
+Browser & Performance:-
+1.	Difference between localStorage, sessionStorage, cookies, and IndexedDB.
+2.	What is CORS? How do you handle it?
+3.	What are web workers?
+4.	What is shadow DOM?
+5.	How does JavaScript handle memory leaks?
+
++--------------------------------------------------------------------------------------------------------+
+Security & Best Practices:-
+1.	CORS (Cross-Origin Resource Sharing) – Why it exists and how to handle it.
+2.	XSS vs CSRF – Difference between the two security vulnerabilities.
+3.	JWT vs Session-based Auth – Which to choose and why.
+4.	Same-Origin Policy – What it is and why it matters.
+5.	HTTPS vs HTTP – How HTTPS secures communication.
+
++--------------------------------------------------------------------------------------------------------+
+Interview Tip:-
+If an interviewer asks:
+ Theory → Explain in simple terms with an example.
+ Coding → Write small snippets (especially for closures, event loop, async/await).
+---
+👉 Do you want me to prepare a cheat sheet with short answers + code snippets for the most asked JS questions (like closure, event loop, async/await, debounce/throttle, call/apply/bind)? That way, you can revise quickly before interviews.

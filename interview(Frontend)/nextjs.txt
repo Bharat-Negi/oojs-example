@@ -1,0 +1,62 @@
+Here’s a well-rounded list of NestJS interview questions for API development, ranging from fundamentals to advanced concepts:
++------------------+------------------------------------+---------------------------------------+
+Basics:-
+1.	What is NestJS, and why use it over Express.js or other Node.js frameworks?
+2.	Explain the core building blocks of NestJS (Module, Controller, Service, Provider).
+3.	How do you create a simple REST API endpoint in NestJS?
+4.	What is a DTO (Data Transfer Object) in NestJS, and why is it used?
+5.	How do you validate request payloads in NestJS?
+
++------------------+------------------------------------+---------------------------------------+
+Architecture & Core Concepts:-
+6.	What are modules in NestJS, and how do you structure them in a large project?
+7.	What is Dependency Injection in NestJS, and how does it work internally?
+8.	Explain Guards in NestJS. How do they differ from Interceptors and Middleware?
+9.	What are Pipes in NestJS? Can you give an example of a custom pipe?
+10.	What are Interceptors in NestJS and common use cases?
+
++------------------+------------------------------------+---------------------------------------+
+API Development Specific:-
+11.	How do you handle versioning of APIs in NestJS?
+12.	How can you implement pagination and filtering in a NestJS API?
+13.	How do you secure a NestJS API with JWT authentication?
+14.	How can you implement role-based access control (RBAC) in NestJS?
+15.	What is the difference between using @Res() and returning objects directly in a controller?
+
++------------------+------------------------------------+---------------------------------------+
+Database & Persistence:-
+16.	How do you integrate TypeORM/Mongoose with NestJS?
+17.	What are Repositories, and how do you use them in NestJS with TypeORM?
+18.	How would you handle database transactions in NestJS?
+19.	How do you handle migrations in a NestJS project?
+20.	Difference between using TypeORM Entities vs. Sequelize Models in NestJS.
+
++------------------+------------------------------------+---------------------------------------+
+Asynchronous & Event-driven:-
+21.	How does NestJS handle async/await under the hood?
+22.	What are Async Providers in NestJS?
+23.	How can you implement message queues (e.g., RabbitMQ, Kafka) in NestJS?
+24.	Explain how to use EventEmitter in NestJS.
+25.	What’s the difference between synchronous and asynchronous providers?
+
++------------------+------------------------------------+---------------------------------------+
+Testing & Maintenance:-
+26.	How do you write unit tests for controllers and services in NestJS?
+27.	How does @nestjs/testing help in testing?
+28.	How do you mock dependencies in a NestJS service test?
+29.	How would you perform integration testing of a NestJS API?
+30.	How do you ensure API documentation is always up to date (Swagger in NestJS)?
+
++------------------+------------------------------------+---------------------------------------+
+31.	How does NestJS handle middleware differently from Express?
+32.	What are Dynamic Modules in NestJS?
+33.	How do you use Global Pipes, Filters, and Interceptors?
+34.	Explain the role of Exception Filters in NestJS. How are they different from try/catch?
+35.	How do you implement caching (Redis/Memory) in NestJS APIs?
+36.	How do you optimize the performance of a NestJS API in production?
+37.	How do you handle multi-tenancy in NestJS?
+38.	How do you configure environment variables securely in NestJS?
+39.	How do you implement GraphQL APIs in NestJS?
+40.	Explain microservices architecture in NestJS.
+
+Would you like me to create sample answers for each question (like a Q&A guide), or just keep this as a list of questions for interview prep?

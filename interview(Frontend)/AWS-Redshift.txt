@@ -1,0 +1,55 @@
+Here’s a solid set of AWS Redshift interview questions — starting from basics to advanced, including real-world problem-solving scenarios.
+
++--------------------------------------------------------------------------------------------------------+
+Basic AWS Redshift Interview Questions:-
+1.	What is Amazon Redshift and how does it differ from RDS or DynamoDB?
+2.	Explain the architecture of Amazon Redshift.
+3.	What are Nodes and Clusters in Redshift?
+4.	Difference between Leader Node and Compute Node.
+5.	What is Columnar Storage and why is it important in Redshift?
+6.	What are Sort Keys and Distribution Keys?
+7.	Difference between DISTKEY, SORTKEY, and PRIMARY KEY in Redshift.
+8.	How does Redshift achieve high performance for analytical queries?
+9.	What are the pricing components for Redshift (on-demand vs reserved instances)?
+10.	How is data loaded into Redshift (COPY command, AWS Glue, Spectrum, etc.)?
+
++--------------------------------------------------------------------------------------------------------+
+Intermediate AWS Redshift Questions:-
+11.	What is the COPY command in Redshift, and what best practices should be followed when loading data?
+12.	Explain VACUUM and ANALYZE commands in Redshift. Why are they important?
+13.	What is Concurrency Scaling in Redshift?
+14.	Explain Workload Management (WLM) in Redshift.
+15.	What are Materialized Views in Redshift, and when would you use them?
+16.	Difference between Redshift Spectrum and Redshift cluster-based storage.
+17.	How does Redshift handle data distribution across nodes?
+18.	What is compression encoding in Redshift?
+19.	What are temporary tables in Redshift and when should you use them?
+20.	How do you connect Redshift with BI tools like Tableau or Power BI?
+
++--------------------------------------------------------------------------------------------------------+
+Advanced AWS Redshift Questions:-
+21.	How would you optimize queries in Redshift? (EXPLAIN, query queues, sort/dist keys, etc.)
+22.	What are late-binding views in Redshift?
+23.	Explain UNLOAD command in Redshift.
+24.	What are Spectrum tables and how are they different from normal tables?
+25.	How does Redshift ensure fault tolerance and data replication?
+26.	What is the difference between Redshift RA3 nodes and DC2 nodes?
+27.	How does AQUA (Advanced Query Accelerator) improve Redshift performance?
+28.	What are Concurrency Limits in Redshift, and how do you handle them?
+29.	How would you migrate data from an on-premises data warehouse to Redshift?
+30.	What are Cross-Region Snapshots and why are they useful?
+
++--------------------------------------------------------------------------------------------------------+
+Scenario-Based / Practical Questions:-
+31.	You notice queries are running very slow in Redshift. How would you troubleshoot?
+32.	Your Redshift cluster is running out of space — what would you do?
+33.	How would you design distribution keys for a large fact table and multiple dimension tables?
+34.	You have a star schema. Which tables should you set as DISTSTYLE ALL and why?
+35.	A COPY command is failing due to bad records. How would you handle error logging in Redshift?
+36.	Your team wants near-real-time analytics, but Redshift loads are batch-oriented. How do you solve this?
+37.	A BI report is running multiple joins on large tables and timing out. How would you optimize?
+38.	How would you monitor Redshift performance (CloudWatch, STL tables, AWS console)?
+39.	You need to enforce row-level security in Redshift. How can you implement this?
+40.	Explain how you’d handle schema evolution in Redshift when upstream data changes.
+
+👉 Do you want me to also prepare best answers with examples for these, or just keep it as a question bank for interview prep?

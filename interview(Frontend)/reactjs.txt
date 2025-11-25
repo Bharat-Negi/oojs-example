@@ -1,0 +1,80 @@
+Here’s a list of **React interview questions** for a **Frontend Developer** role, categorized from **basic** to **advanced** so you can prepare thoroughly:
+
++--------------------------------------------------------------------------------------------------------+
+### **1. Core React Basics**
+* What is React, and why is it used?
+* Explain the difference between functional and class components.
+* What are props and state? How are they different?
+* How does the virtual DOM work?
+* What are keys in React, and why are they important?
+* What is JSX, and why do we use it?
+
++--------------------------------------------------------------------------------------------------------+
+### **2. Component Lifecycle**
+* What are React lifecycle methods?
+* Explain the difference between `componentDidMount`, `componentDidUpdate`, and `componentWillUnmount`.
+* How do you implement side effects in functional components?
+* What is the purpose of `useEffect`?
+
++--------------------------------------------------------------------------------------------------------+
+### **3. React Hooks**
+* What are hooks in React? Why were they introduced?
+* Explain `useState` and `useEffect` with examples.
+* What is the difference between `useMemo` and `useCallback`?
+* How does `useRef` work, and what are common use cases?
+* Can you explain custom hooks and when you’d use one?
+
++--------------------------------------------------------------------------------------------------------+
+### **4. State Management**
+* How is state managed in React applications?
+* Compare **Context API** vs **Redux** vs **Recoil/Zustand/MobX**.
+* How do you handle global state in a large React app?
+* What are reducers, and how does the `useReducer` hook work?
+
++--------------------------------------------------------------------------------------------------------+
+### **5. Performance Optimization**
+* How do you optimize performance in React?
+* What is React.memo and when would you use it?
+* Difference between controlled and uncontrolled components.
+* How does code splitting work in React?
+* What are lazy loading and Suspense in React?
+
++--------------------------------------------------------------------------------------------------------+
+### **6. Routing**
+* How does routing work in React (React Router)?
+* Difference between `<BrowserRouter>` and `<HashRouter>`.
+* Explain **dynamic routing** with React Router.
+* How do you implement route guards in React?
+
++--------------------------------------------------------------------------------------------------------+
+### **7. Forms & Events**
+* How do you handle forms in React?
+* What is the difference between controlled and uncontrolled inputs?
+* How do you handle validation in React forms?
+* How does event handling differ in React vs plain JavaScript?
+
++--------------------------------------------------------------------------------------------------------+
+### **8. Advanced Concepts**
+* Explain **Server-Side Rendering (SSR)** and how Next.js fits in.
+* What is hydration in React?
+* Explain React Fiber architecture.
+* What are error boundaries?
+* Difference between class-based context and hooks-based context.
+* How does React handle reconciliation?
+
++--------------------------------------------------------------------------------------------------------+
+### **9. Testing**
+* How do you test React components?
+* Difference between **unit testing**, **integration testing**, and **end-to-end testing** in React apps.
+* How do you test hooks with Jest and React Testing Library?
+
++--------------------------------------------------------------------------------------------------------+
+### **10. Practical / Scenario-Based**
+* How would you handle API calls in React?
+* Show how you’d implement a search bar with debouncing.
+* If a React app is slow, how would you debug and optimize it?
+* How do you persist data across page reloads (e.g., authentication)?
+* How would you structure a large-scale React project?
+
++--------------------------------------------------------------------------------------------------------+
+👉 Do you want me to also prepare **sample answers with code snippets** for the most common ones (like `useEffect`, `React.memo`, Context API, etc.), so you can use them directly in interviews?
