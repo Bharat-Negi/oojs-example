@@ -26,10 +26,16 @@
         localStorage.clear();
       }
 
-    //   setTimeout(() => {
-    //     localStorage.clear();
-    //   }, 5000);
+      //   setTimeout(() => {
+      //     localStorage.clear();
+      //   }, 5000);
 
+      localStorage.setItem("user", JSON.stringify({ name: "Bharat", age: 22 }));
+      const user = JSON.parse(localStorage.getItem("user"));
+      console.log(user.age); // Bharat
+      setTimeout(() => {
+        localStorage.removeItem("user");
+      }, 5000);
     </script>
   </body>
 </html>
