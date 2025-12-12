@@ -79,3 +79,150 @@ A structure to define the shape of an object.
 +--------------------------------------------------------------------------------------------------------+
 
 8. What is the difference between interface and type?
++-------------------------------+-------------------------------+
+| Interface                     | Type Alias                    |
++-------------------------------+-------------------------------+
+| Extendable (can be merged)    | Cannot be reopened            |
+|                               |                               |
+| Good for objects/classes      | Good for primitives,          |
+|                               | unions, tuples                |
+|                               |                               |
+| More preferred for OOP        | More flexible                 |
++-------------------------------+-------------------------------+
++--------------------------------------------------------------------------------------------------------+
+
+9. What are Generics in TypeScript?
+Used to make functions or classes reusable with different data types.
+
+function identity<T>(value: T): T {
+  return value;
+}
+identity<number>(10);
+identity<string>("Hi");
++--------------------------------------------------------------------------------------------------------+
+
+10. What is never type in TypeScript?
+Represents values that never occur.
+
+Example:-
+function error(msg: string): never {
+  throw new Error(msg);
+}
++--------------------------------------------------------------------------------------------------------+
+
+11. What are Type Assertions?
+Used to tell TypeScript the specific type of a variable.
+
+let value: unknown = "hello";
+let length = (value as string).length;
++--------------------------------------------------------------------------------------------------------+
+
+12. What is Readonly in TypeScript?
+Prevents properties from being modified.
+
+interface Car {
+  readonly model: string;
+}
++--------------------------------------------------------------------------------------------------------+
+
+13. What are Enums?
+A group of named constants.
+
+enum Status {
+  Active,
+  Pending,
+  Disabled
+}
++--------------------------------------------------------------------------------------------------------+
+
+14. What is Partial, Pick, and Omit?
+Utility types:-
+
+Partial<T> // Makes all properties optional
+Pick<T, K> // Select specific properties
+Omit<T, K> // Remove specific properties
+
+Example:-
+interface User { id: number; name: string; age: number; }
+
+const p: Partial<User> = { name: "Bharat" };
+const pick: Pick<User, "name" | "age"> = { name: "Bharat", age: 22 };
+const omit: Omit<User, "age"> = { id: 1, name: "Bharat" };
++--------------------------------------------------------------------------------------------------------+
+
+15. What is the difference between undefined and null types in TypeScript?
+• undefined: variable declared but not assigned
+• null: variable intentionally set to empty
++--------------------------------------------------------------------------------------------------------+
+
+16. What is record type?
+Type-safe dictionary.
+
+const scores: Record<string, number> = {
+  a: 10,
+  b: 20
+};
++--------------------------------------------------------------------------------------------------------+
+
+17. What are decorators in TypeScript?
+Special functions used for metadata on classes, methods, properties, etc.
+(Enabled with "experimentalDecorators": true)
+
+function log(target: any) {
+  console.log("Decorator executed");
+}
+
+@log
+class Test {}
++--------------------------------------------------------------------------------------------------------+
+
+18. What is Structural Typing?
+TypeScript uses duck typing — types are checked by structure, not name.
++--------------------------------------------------------------------------------------------------------+
+
+19. What is “Declaration Merging”?
+Interfaces with the same name merge automatically.
+
+interface User { id: number; }
+interface User { name: string; }
+
+const u: User = { id: 1, name: "Bharat" };
++--------------------------------------------------------------------------------------------------------+
+
+20. What is module vs namespace?
+• Module → ES modules (import/export)
+• Namespace → Legacy grouping mechanism
+Modules are preferred.
++--------------------------------------------------------------------------------------------------------+
+
+21. What are Conditional Types?
+type IsString<T> = T extends string ? true : false;
++--------------------------------------------------------------------------------------------------------+
+
+22. What is infer keyword?
+Used inside conditional types to infer types.
+
+type ReturnType<T> = T extends (...args: any[]) => infer R ? R : never;
++--------------------------------------------------------------------------------------------------------+
+
+23. What are Mapped Types?
+type Optional<T> = {
+  [K in keyof T]?: T[K];
+};
++--------------------------------------------------------------------------------------------------------+
+
+24. What is keyof operator?
+Gets all keys of an object type.
+
+type Keys = keyof User; // "id" | "name" | "age"
++--------------------------------------------------------------------------------------------------------+
+
+25. What is the difference between interface extends and type &?
+
+interface A { x: number }
+interface B extends A { y: number } // OOP style
+
+type C = A & { y: number } // Intersection type
++--------------------------------------------------------------------------------------------------------+
+
+
