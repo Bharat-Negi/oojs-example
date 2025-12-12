@@ -1,0 +1,81 @@
+Basic TypeScript Interview Questions:-
+
+1. What is TypeScript?
+TypeScript is a typed superset of JavaScript that adds static typing, interfaces, and advanced features and compiles to JavaScript.
++--------------------------------------------------------------------------------------------------------+
+
+2. What are the benefits of TypeScript?
+• Early error detection
+• Better IntelliSense / autocomplete
+• Strong type system
+• Supports ES6+ features
+• Improves code maintainability & scalability
++--------------------------------------------------------------------------------------------------------+
+
+3. How do you define a variable in TypeScript?
++--------------+------------+---------------+
+| let age: number = 25;                     |
+| let name: string = "Bharat";              |
+| let isActive: boolean = true;             |
++--------------+------------+---------------+
++--------------------------------------------------------------------------------------------------------+
+
+4. What are the basic types in TypeScript?
+• string
+• number
+• boolean
+• any
+• unknown
+• void
+• null / undefined
+• never
+• object
+• array
+• tuple
+• enum
++--------------------------------------------------------------------------------------------------------+
+
+5. What is the difference between any and unknown?
++----------------+-----------------------+
+| any            | unknown               |
++================+=======================+
+| Allows         | More strict           |
+| everything     |                       |
++----------------+-----------------------+
+| No type-check  | Requires type-check   |
+|                | before use            |
++----------------+-----------------------+
+| Unsafe         | Safe                  |
++----------------+-----------------------+
+Example:
++--------------+------------+---------------+
+| let a: any = 10;                          |
+| a.toUpperCase(); // valid                 |
+|                                           |
+| let b: unknown = "hello";                 |
+| b.toUpperCase(); // ❌ error              |
++--------------+------------+---------------+
++--------------------------------------------------------------------------------------------------------+
+
+6. What is a Union Type?
+Allows a variable to hold more than one type.
++--------------+------------+---------------+
+| let value: number | string;               |
+| value = 10;                               |
+| value = "hello";                          |
++--------------+------------+---------------+
++--------------------------------------------------------------------------------------------------------+
+
+7. What are Interfaces in TypeScript?
+A structure to define the shape of an object.
++--------------+------------+---------------+
+| interface User {                          |
+| id: number;                               |
+| name: string;                             |
+| }                                         |
+|                                           |
+|const u: User = { id: 1, name: "Bharat" }; |
++--------------+------------+---------------+
++--------------------------------------------------------------------------------------------------------+
+
+8. What is the difference between interface and type?

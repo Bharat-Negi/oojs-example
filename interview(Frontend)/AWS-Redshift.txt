@@ -51,5 +51,3 @@ Scenario-Based / Practical Questions:-
 38.	How would you monitor Redshift performance (CloudWatch, STL tables, AWS console)?
 39.	You need to enforce row-level security in Redshift. How can you implement this?
 40.	Explain how you’d handle schema evolution in Redshift when upstream data changes.
-
-👉 Do you want me to also prepare best answers with examples for these, or just keep it as a question bank for interview prep?

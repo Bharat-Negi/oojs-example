@@ -58,5 +58,3 @@ Testing & Maintenance:-
 38.	How do you configure environment variables securely in NestJS?
 39.	How do you implement GraphQL APIs in NestJS?
 40.	Explain microservices architecture in NestJS.
-
-Would you like me to create sample answers for each question (like a Q&A guide), or just keep this as a list of questions for interview prep?

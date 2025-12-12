@@ -119,4 +119,3 @@ If an interviewer asks:
  Theory → Explain in simple terms with an example.
  Coding → Write small snippets (especially for closures, event loop, async/await).
 ---
-👉 Do you want me to prepare a cheat sheet with short answers + code snippets for the most asked JS questions (like closure, event loop, async/await, debounce/throttle, call/apply/bind)? That way, you can revise quickly before interviews.

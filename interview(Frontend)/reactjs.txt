@@ -77,4 +77,3 @@ Here’s a list of **React interview questions** for a **Frontend Developer** ro
 * How would you structure a large-scale React project?
 
 +--------------------------------------------------------------------------------------------------------+
-👉 Do you want me to also prepare **sample answers with code snippets** for the most common ones (like `useEffect`, `React.memo`, Context API, etc.), so you can use them directly in interviews?

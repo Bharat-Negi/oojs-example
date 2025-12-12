@@ -53,7 +53,6 @@ Scenario-based Questions:-
 40.	How would you migrate an existing SPA (Single Page Application) into a PWA?
 
 +--------------------------------------------------------------------------------------------------------+
-👉 Do you want me to also prepare sample answers with code snippets for the most commonly asked PWA questions (like service worker lifecycle, caching strategies, offline support, etc.)?
 
 Perfect 👍 Here’s a detailed set of Progressive Web App (PWA) interview questions with sample answers you can use for preparation.
 +--------------------------------------------------------------------------------------------------------+
@@ -194,5 +193,4 @@ A:
 •	Confirm browser and platform support (some iOS limitations).
 
 +--------------------------------------------------------------------------------------------------------+
-Would you like me to also create a condensed cheat sheet version (one-liners for each Q&A) so you can quickly revise before an interview?
 
