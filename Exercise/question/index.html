@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div style="margin: 20px auto 0; max-width: 600px">
+			<div id="questionNum"></div>
+			<div
+				id="title"
+				style="display: flex; justify-content: center; margin-bottom: 10px"
+			></div>
+			<div
+				id="option"
+				style="
+					display: flex;
+					justify-content: center;
+					margin-bottom: 10px;
+					gap: 10px;
+				"
+			></div>
+
+			<div
+				style="
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+				"
+			>
+				<button id="backNext" onClick="back()">Back</button>
+				<button id="nextBtn" onClick="next()">Next</button>
+			</div>
+		</div>
+		<script src="script.js"></script>
+	</body>
+</html>
