@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Flat array</title>
+	</head>
+	<body>
+		<h1>Caching and Memoize</h1>
+
+		<script>
+			function myMemoize(fn, context) {
+				const res = {};
+
+				return function (...args) {
+					var argsCache = JSON.stringify(args);
+					if (!res[argsCache]) {
+						res[argsCache] = fn.call(context || this, ...args);
+					}
+					return res[argsCache];
+				};
+			}
+
+			const clumsyProduct = (num1, num2) => {
+				for (let i = 1; i <= 100000000; i++) {}
+				return num1 * num2;
+			};
+
+			// normal time take
+			console.time("First Call");
+			console.log(clumsyProduct(6789, 5643));
+			console.timeEnd("First Call");
+
+			console.time("Second Call");
+			console.log(clumsyProduct(6789, 5643));
+			console.timeEnd("Second Call");
+
+			console.log("--------------------------------------------");
+			// after Memoize time take
+			const memoizedClumzyProduct = myMemoize(clumsyProduct);
+
+			console.time("First Call");
+			console.log(memoizedClumzyProduct(6789, 5643));
+			console.timeEnd("First Call");
+
+			console.time("Second Call");
+			console.log(memoizedClumzyProduct(6789, 5643));
+			console.timeEnd("Second Call");
+		</script>
+	</body>
+</html>

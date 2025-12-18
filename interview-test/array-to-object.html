@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Array to Object</title>
+	</head>
+	<body>
+		<h1>Please Check Browser Console</h1>
+
+		<script>
+			const nums = [1, 2, 3, 4, 5];
+			const obje = {};
+			const result = [];
+
+			for (let i = 0; i < nums.length; i++) {
+				result.push({ id: nums[i] });
+			}
+			console.log(result);
+		</script>
+	</body>
+</html>

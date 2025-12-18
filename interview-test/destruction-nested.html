@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Destruction Nested</title>
+	</head>
+	<body>
+		<h1>Please Check Browser Console</h1>
+
+		<script>
+			const user = {
+				name: "Javascript",
+				age: 25,
+				address: {
+					location: {
+						city: "Delhi",
+						state: "Delhi NCR",
+						landmarks: [
+							{ title: "Park" },
+							{ title: "Mall" },
+							{ title: "Metro Station" },
+							{ title: "Hospital" },
+						],
+					},
+				},
+			};
+
+			const {
+				name,
+				age,
+				address: {
+					location: {
+						city,
+						state,
+						landmarks: [{ title: a }, , { title: b }],
+					},
+				},
+			} = user;
+
+			console.log(city, a, b);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Reverse Name String</title>
+	</head>
+	<body>
+		<h1>Please Check Browser Console</h1>
+
+		<script>
+			let str = "Hello tach interview";
+			let arr = str.split(" ");
+			let reversed = [];
+
+			console.log(arr);
+			for (let i = arr.length - 1; i >= 0; i--) {
+				reversed.push(arr[i]);
+			}
+			console.log(reversed.join(" "));
+		</script>
+	</body>
+</html>

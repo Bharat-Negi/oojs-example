@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Longest Word in Array</title>
+	</head>
+	<body>
+		<h1>Please Check Browser Console</h1>
+
+		<script>
+			const str = "interview react javascript";
+
+			const spllited_word = str.split(" "); // change to array
+			console.log(spllited_word);
+
+			let longest_word = "";
+			for (let value of spllited_word) {
+				if (longest_word.length < value.length) {
+					longest_word = value;
+				}
+			}
+			console.log(longest_word); // longest word in array
+		</script>
+	</body>
+</html>

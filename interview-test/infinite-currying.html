@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Infinite Currying</title>
+	</head>
+	<body>
+		<h1>Please Check Browser Console</h1>
+
+		<script>
+			function add(a) {
+				return function (b) {
+					if (b !== undefined) {
+						return add(a + b);
+					}
+					return a;
+				};
+			}
+
+			// Usage
+			console.log(add(1)(2)(3)());
+			console.log(add(15)(10)(31)(25)());
+			console.log(add(1)(2)());
+		</script>
+	</body>
+</html>

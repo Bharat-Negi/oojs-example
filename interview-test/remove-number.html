@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Remove Number</title>
+	</head>
+	<body>
+		<h1>Please Check Browser Console</h1>
+
+		<script>
+			let string = "a1b3c8d9frl";
+			let new_string = "";
+
+			for (let i of string) {
+				if (isNaN(i)) {
+					new_string += i;
+				}
+			}
+
+			console.log(new_string);
+		</script>
+	</body>
+</html>
