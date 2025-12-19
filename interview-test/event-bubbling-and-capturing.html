@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Explain event bubbling and event capturing</title>
+		<style>
+			* {
+				box-sizing: border-box;
+			}
+			#outerDiv,
+			#outerDiv1 {
+				width: 80%;
+				margin: 0 30px;
+				padding: 5px;
+				text-align: center;
+				border: solid 4px blue;
+			}
+			#midDiv,
+			#midDiv1 {
+				width: 100%;
+				padding: 5px;
+				border: solid 4px green;
+			}
+			#innerDiv,
+			#innerDiv1 {
+				width: 100%;
+				padding: 5px;
+				border: solid 4px red;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Please Check Browser Console</h1>
+
+		<div id="outerDiv">
+			Outer Div
+			<div id="midDiv">
+				Middle Div
+				<div id="innerDiv">Inner Div</div>
+			</div>
+		</div>
+		<br />
+		<hr />
+		<br />
+		<div id="outerDiv1">
+			Outer Div
+			<div id="midDiv1">
+				Middle Div
+				<div id="innerDiv1">Inner Div</div>
+			</div>
+		</div>
+
+		<script>
+			// event bubbling
+			document.getElementById("outerDiv").addEventListener("click", () => {
+				console.log("Outer div has been clicked");
+				console.log("---------------------------------");
+			});
+
+			document.getElementById("midDiv").addEventListener("click", () => {
+				console.log("Middle div has been clicked");
+			});
+
+			document.getElementById("innerDiv").addEventListener("click", () => {
+				console.log("Inner div has been clicked");
+			});
+
+			// event capturing
+			document.getElementById("outerDiv1").addEventListener(
+				"click",
+				() => {
+					console.log("Outer div has been clicked");
+				},
+				true
+			);
+
+			document.getElementById("midDiv1").addEventListener(
+				"click",
+				() => {
+					console.log("Middle div has been clicked");
+				},
+				true
+			);
+
+			document.getElementById("innerDiv1").addEventListener(
+				"click",
+				() => {
+					console.log("Inner div has been clicked");
+					console.log("---------------------------------");
+				},
+				true
+			);
+		</script>
+	</body>
+</html>
