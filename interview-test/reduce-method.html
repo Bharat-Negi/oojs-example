@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Reduce Method</title>
+	</head>
+	<body>
+		<h1>Please Check Browser Console</h1>
+		<script>
+			const number = [1, 2, 3, 4, 5];
+
+			const sum = number.reduce((accumulator, currentVal) => {
+				return accumulator + currentVal;
+			}, 10);
+
+			console.log(sum);
+
+			// ------------------------------------------------
+
+			const fruits = ["apple", "banana", "apple", "orange", "banana", "apple"];
+
+			const count = fruits.reduce((acc, fruit) => {
+				acc[fruit] = (acc[fruit] || 0) + 1;
+				return acc;
+			}, {});
+
+			console.log(count);
+		</script>
+	</body>
+</html>
