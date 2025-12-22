@@ -7,7 +7,7 @@ export default UserContext;
 import { useState } from "react";
 import UserContext from "./createContext";
 
-const UserProvider = ({children} =>{
+const UserProvider = ({children} => {
     const [user, setUser] = useState("bharat");
 
     return(

@@ -20,8 +20,8 @@
 
 			const fruits = ["apple", "banana", "apple", "orange", "banana", "apple"];
 
-			const count = fruits.reduce((acc, fruit) => {
-				acc[fruit] = (acc[fruit] || 0) + 1;
+			const count = fruits.reduce((acc, name) => {
+				acc[name] = (acc[name] || 0) + 1;
 				return acc;
 			}, {});
 
