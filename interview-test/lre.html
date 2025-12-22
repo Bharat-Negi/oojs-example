@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=LUR, initial-scale=1.0" />
+		<title>LUR</title>
+	</head>
+	<body>
+		<h1>Please Check Browser Console</h1>
+
+		<script>
+			class LRU {
+				constructor(max = 5) {
+					this.max = max;
+					this.cache = new Map();
+				}
+
+				get(key) {
+					let item = this.cache.get(key);
+
+					if (item) {
+						this.cache.delete(key);
+						this.cache.set(key, item);
+					}
+
+					return item;
+				}
+
+				set(key, value) {
+					if (this.cache.has(key)) this.cache.delete(key);
+					else if (this.cache.size === this.max) {
+						this.cache.delete(this.first());
+					}
+					this.cache.set(key, value);
+				}
+
+				first() {
+					return this.cache.keys().next().value;
+				}
+			}
+
+			const LurCache = new LRU(3);
+
+			LurCache.set("name", "Bharat Negi");
+			LurCache.set("age", "40");
+			LurCache.set("Prof", "Html");
+			console.log(LurCache.cache);
+			LurCache.get("name");
+			console.log(LurCache.cache);
+			LurCache.set("Location", "Delhi");
+			console.log(LurCache.cache);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>12 hr to 24 hr formate</title>
+	</head>
+	<body>
+		<h1>Please Check Browser Console</h1>
+		<script>
+			const convert12to24 = (time12h) => {
+				const [time, modifier] = time12h.split(" ");
+				let [hours, minutes] = time.split(":");
+
+				if (hours === "12") hours = "00";
+				if (modifier === "PM") hours = parseInt(hours) + 12;
+
+				return `${hours}:${minutes}`;
+			};
+
+			console.log(convert12to24("02:02 PM"));
+			console.log(convert12to24("04:06 PM"));
+			console.log(convert12to24("12:00 PM"));
+			console.log(convert12to24("12:02 AM"));
+		</script>
+	</body>
+</html>
