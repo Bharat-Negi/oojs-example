@@ -15,13 +15,17 @@
 		</style>
 	</head>
 	<body>
-		<input type="range" id="inputHandler" value="10" />
+		<input type="range" id="inputHandler" value="0" />
 		<div class="piechart" style="--percentage: 10%"></div>
+		<input type="range" id="inputHandler2" value="10" />
 
 		<script>
 			const pieChart = document.querySelector(".piechart");
 			document.querySelector("#inputHandler").addEventListener("input", (e) => {
 				pieChart.style = `--percentage:${e.target.value}%`;
+			});
+			document.querySelector("#inputHandler").addEventListener("input", (e) => {
+				inputHandler2.value = `${e.target.value}`;
 			});
 		</script>
 	</body>
