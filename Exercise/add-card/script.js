@@ -4,8 +4,6 @@ let btnClick = document.querySelector(".btn");
 
 document.addEventListener("submit", function (docFile) {
 	docFile.preventDefault();
-	console.log(inputs[0].value);
-	console.log(inputs);
 
 	let card = document.createElement("div");
 	card.classList.add("card");
@@ -32,8 +30,14 @@ document.addEventListener("submit", function (docFile) {
 	card.appendChild(ep);
 
 	inputs.forEach(function (inp) {
-		if (inp.type != "submit") {
-			inp.value = "";
+		// if (inp.type != "submit") {
+		// 	inp.value = "";
+		// }
+
+		if (inp.value == "") {
+			// console.log(inp);
+			card.remove();
 		}
+		inp.value = "";
 	});
 });
