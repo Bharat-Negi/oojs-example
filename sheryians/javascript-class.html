@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>JavaScript Class</title>
+	</head>
+	<body>
+		<h1>Look in console</h1>
+		<div id="textFile"></div>
+		<script>
+			// Class name start for capital letter
+			class CreatePencil {
+				constructor(name, price, color, company) {
+					this.name = name;
+					this.price = price;
+					this.color = color;
+					this.company = company;
+				}
+
+				// below call method
+				erase() {
+					document
+						.querySelector("#textFile")
+						.querySelectorAll("h2")
+						.forEach((elem) => {
+							if (elem.style.color === this.color) {
+								elem.remove();
+							}
+						});
+				}
+
+				write(text) {
+					let h2 = document.createElement("h2");
+					h2.textContent = text;
+					h2.style.color = this.color;
+					document.querySelector("#textFile").append(h2);
+				}
+			}
+
+			// Call Class
+			let p1 = new CreatePencil("Nataraj", 10, "black", "Net Bharat");
+			let p2 = new CreatePencil("Dojo", 15, "pink", "dojo Bharat");
+		</script>
+	</body>
+</html>

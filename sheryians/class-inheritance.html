@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>JavaScript Class Inheritance</title>
+	</head>
+	<body>
+		<h1>Look in console</h1>
+		<div id="textFile"></div>
+		<script>
+			// Class name start for capital letter
+			class CreatePencil {
+				constructor(name, price, color, company, role) {
+					this.name = name;
+					this.price = price;
+					this.color = color;
+					this.company = company;
+					this.role = "User";
+				}
+
+				// Below call method
+				checkRole() {
+					console.log(`you role is ${this.role}`);
+				}
+
+				write(text) {
+					let h2 = document.createElement("h2");
+					h2.textContent = `${this.name}: ${text}`;
+					document.querySelector("#textFile").append(h2);
+				}
+			}
+
+			class Admin extends CreatePencil {
+				constructor(name, price, color, company) {
+					super(name, price, color, company);
+					this.role = "Admin";
+				}
+
+				// Below call method
+				remove() {
+					document
+						.querySelector("#textFile")
+						.querySelectorAll("h2")
+						.forEach((elem) => {
+							elem.remove();
+						});
+				}
+			}
+
+			// Call Class
+			let p1 = new CreatePencil("Nataraj", 10, "black", "Net Bharat");
+			let p2 = new CreatePencil("Dojo", 15, "pink", "dojo Bharat");
+			let a1 = new Admin("Admin Pen", 15, "green", "Admin Bharat");
+		</script>
+	</body>
+</html>

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Prototype Inheritance</title>
+	</head>
+	<body>
+		<h1>Look in console</h1>
+
+		<script>
+			let coffee = {
+				color: "Green",
+				drink: function () {
+					console.log("what a drink it is...");
+				},
+			};
+
+			let bharatCoffee = Object.create(coffee);
+
+			console.log(bharatCoffee);
+			bharatCoffee.taste = "bitter";
+			bharatCoffee.drink();
+		</script>
+	</body>
+</html>

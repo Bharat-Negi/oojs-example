@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Module Pattern (IIFE)</title>
+	</head>
+	<body>
+		<h1>Look in console</h1>
+
+		<script>
+			let Bank = (function () {
+				let bankBalance = 15000;
+
+				function checkBalance() {
+					console.log("Bank Balance: " + bankBalance);
+				}
+
+				function setBalance(val) {
+					bankBalance += val;
+					console.log("Add Money: " + val);
+					console.log("New Balance: " + bankBalance);
+				}
+
+				function withdraw(val) {
+					if (val <= bankBalance) {
+						bankBalance -= val;
+						console.log("Withdraw: " + val);
+						console.log("Update New Balance: " + bankBalance);
+					} else {
+						console.log("Withdraw Request: " + val);
+						console.log("Insufficient balance");
+					}
+				}
+
+				// Public methods
+				return {
+					checkBalance,
+					setBalance,
+					withdraw,
+				};
+			})();
+
+			Bank.checkBalance(); // 15000
+			Bank.setBalance(5000); // New Balance 20000
+			Bank.withdraw(9000); // New Balance 11000
+			Bank.withdraw(14000); // Insufficient balance
+		</script>
+	</body>
+</html>

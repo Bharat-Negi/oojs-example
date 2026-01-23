@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Use of Prototype</title>
+	</head>
+	<body>
+		<h1>Look in console</h1>
+		<div id="textFile"></div>
+		<script>
+			// Prototype use in Constructor
+			function CreatePencil(name, price, color, company) {
+				this.name = name;
+				this.price = price;
+				this.color = color;
+				this.company = company;
+			}
+
+			CreatePencil.prototype.write = function (text) {
+				let h2 = document.createElement("h2");
+				h2.textContent = text;
+				h2.style.color = this.color;
+				document.querySelector("#textFile").append(h2);
+			};
+
+			// make different use of Constructor
+			let p1 = new CreatePencil("Nataraj", 10, "black", "Net Bharat");
+			let p2 = new CreatePencil("Dojo", 15, "pink", "dojo Bharat");
+
+			// call code
+			console.log(p1);
+			console.log(p2);
+
+			p1.write("Hello");
+			p2.write("Hello Hey");
+		</script>
+	</body>
+</html>
