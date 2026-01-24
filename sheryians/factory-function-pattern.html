@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Factory Function Pattern</title>
+	</head>
+	<body>
+		<h1>Look in console</h1>
+
+		<script>
+			function createProduct(name, price) {
+				let stock = 10;
+				return {
+					name,
+					price,
+					checkStock() {
+						console.log(`${name} Stock left: ${stock}`);
+					},
+					buy(qty) {
+						if (qty <= stock) {
+							stock -= qty;
+							console.log(`${qty} pieces booked - ${stock} pieces left.`);
+						} else {
+							console.log(`We only have ${stock} pieces left.`);
+						}
+					},
+					refill(qty) {
+						stock += qty;
+						console.log(`Refilled the stock - ${name} now ${stock} pieces.`);
+					},
+				};
+			}
+
+			const pen = createProduct("Pen", 10);
+			pen.checkStock(); // 10
+			pen.buy(3); // 3 pieces booked - 7 pieces left.
+			pen.buy(10); // We only have 7 pieces left.
+			pen.refill(5); // refilled the stock - 12 pieces now.
+			pen.checkStock(); // 12
+			console.log("----------------------------");
+			const book = createProduct("Book", 50);
+			book.checkStock();
+			book.buy(3);
+			book.buy(10);
+			book.refill(5);
+			book.checkStock();
+		</script>
+	</body>
+</html>
