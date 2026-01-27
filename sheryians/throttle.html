@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Javascript Throttle</title>
+	</head>
+	<body>
+		<div>
+			<input type="text" />
+		</div>
+		<h2></h2>
+		<script>
+			let input = document.querySelector("input");
+
+			function throttle(fun, delay) {
+				let timer = 0;
+				return function (...args) {
+					let now = Date.now();
+					if (now - timer >= delay) {
+						timer = now;
+						fun(...args);
+					}
+				};
+			}
+
+			input.addEventListener(
+				"input",
+				throttle(function () {
+					document.querySelector("h2").textContent += " hey";
+				}, 1000),
+			);
+		</script>
+	</body>
+</html>
