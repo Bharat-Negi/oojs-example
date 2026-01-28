@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Image Filter Tool</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div class="top-bar">
+			<input type="file" id="upload" accept="image/*" />
+			<button class="btn-reset" onclick="resetFilters()">Reset</button>
+			<button class="btn-download" onclick="downloadImage()">Download</button>
+		</div>
+
+		<div class="container">
+			<div class="image-area">
+				<img id="image" />
+			</div>
+
+			<div class="filters">
+				<h3>Filters</h3>
+
+				<div class="filter-group">
+					<label>Brightness</label>
+					<input
+						type="range"
+						min="0"
+						max="200"
+						value="100"
+						data-filter="brightness"
+					/>
+				</div>
+
+				<div class="filter-group">
+					<label>Contrast</label>
+					<input
+						type="range"
+						min="0"
+						max="200"
+						value="100"
+						data-filter="contrast"
+					/>
+				</div>
+
+				<div class="filter-group">
+					<label>Saturation</label>
+					<input
+						type="range"
+						min="0"
+						max="200"
+						value="100"
+						data-filter="saturate"
+					/>
+				</div>
+
+				<div class="filter-group">
+					<label>Hue Rotation</label>
+					<input
+						type="range"
+						min="0"
+						max="360"
+						value="0"
+						data-filter="hue-rotate"
+					/>
+				</div>
+
+				<div class="filter-group">
+					<label>Blur</label>
+					<input type="range" min="0" max="10" value="0" data-filter="blur" />
+				</div>
+
+				<div class="filter-group">
+					<label>Grayscale</label>
+					<input
+						type="range"
+						min="0"
+						max="100"
+						value="0"
+						data-filter="grayscale"
+					/>
+				</div>
+
+				<div class="filter-group">
+					<label>Sepia</label>
+					<input type="range" min="0" max="100" value="0" data-filter="sepia" />
+				</div>
+
+				<div class="filter-group">
+					<label>Opacity</label>
+					<input
+						type="range"
+						min="0"
+						max="100"
+						value="100"
+						data-filter="opacity"
+					/>
+				</div>
+
+				<div class="filter-group">
+					<label>Invert</label>
+					<input
+						type="range"
+						min="0"
+						max="100"
+						value="0"
+						data-filter="invert"
+					/>
+				</div>
+			</div>
+		</div>
+
+		<script src="script.js"></script>
+	</body>
+</html>
